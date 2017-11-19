@@ -1,5 +1,5 @@
 import itertools
-from reward_flight_api import core
+from avios_api import core
 
 
 PATH = 'productlocations'
@@ -31,28 +31,28 @@ def get_locations():
 
 def get_airports():
     locations_response = get_locations()
-    return _get_by_type(locations_response, TYPE_AIRPORT)
+    return get_by_type(locations_response, TYPE_AIRPORT)
 
 
 def get_regions():
     locations_response = get_locations()
-    return _get_by_type(locations_response, TYPE_REGION)
+    return get_by_type(locations_response, TYPE_REGION)
 
 
 def get_countries():
     locations_response = get_locations()
-    return _get_by_type(locations_response, TYPE_COUNTRY)
+    return get_by_type(locations_response, TYPE_COUNTRY)
 
 
 def get_cities():
     locations_response = get_locations()
-    return _get_by_type(locations_response, TYPE_CITY)
+    return get_by_type(locations_response, TYPE_CITY)
 
 
-def _get_by_type(locations_response, type_):
+def get_by_type(locations_response, type_):
     if locations_response.get('type') == type_:
         return [locations_response]
 
     return itertools.chain.from_iterable(
-        _get_by_type(location, type_) for location in locations_response['location']
+        get_by_type(location, type_) for location in locations_response['location']
     )

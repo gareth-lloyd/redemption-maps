@@ -16,7 +16,7 @@ DEFAULT_HEADERS = (
     HDR_APPLICATION_NAME,
     HDR_APPLICATION_VSN,
     HDR_DEVICE,
-    HDR_DEVICE_TYPE,
+    HDR_DEVICE_TYPE
 )
 
 PUBLIC_USERNAME = 'public'
@@ -27,14 +27,16 @@ def _random_transaction_id():
     x = "".join(random.choice('1234567890') for _ in range(20))
     return "baflt-and-{}".format(x)
 
+
 def get(path, params):
     path = URL + path
     for param_name, param_value in params:
         path += ";" + "{}={}".format(param_name, param_value)
 
-     headers = dict(DEFAULT_HEADERS)
-     headers[HDR_TRANSACTION_ID] = _random_transaction_id()
+    headers = dict(DEFAULT_HEADERS)
+    headers[HDR_TRANSACTION_ID] = _random_transaction_id()
 
+    print(path)
     response = requests.get(
         path, headers=headers,
         auth=HTTPBasicAuth(PUBLIC_USERNAME, PUBLIC_PASSWORD)

@@ -101,20 +101,17 @@ def get_city_to_continent_availability(
 
 
 def _unpack_availability(availability_response, start, end):
-    journey_availabilities = (
-        availability_response['preferredJourney'][0]['journeyAvailability']
-    )
-
-    for journey_availability in journey_availabilities:
-        origin_city = journey_availability[ARG_ORIGIN_CITY]
-        destination_city = journey_availability[ARG_DESTINATION_CITY]
-        availability = (
-            journey_availability['cabinAvailability'][0]['availability']
-        )
-        availability = [
-            (day, bool(int(availability)))
-            for availability, day in zip(
-                availability, day_iterator_inclusive(start, end)
+    for preferred_journey in availability_response['preferredJourney']:
+        for journey_availability in preferred_journey['journeyAvailability']:
+            origin_city = journey_availability[ARG_ORIGIN_CITY]
+            destination_city = journey_availability[ARG_DESTINATION_CITY]
+            availability = (
+                journey_availability['cabinAvailability'][0]['availability']
             )
-        ]
-        yield origin_city, destination_city, availability
+            availability = [
+                (day, bool(int(availability)))
+                for availability, day in zip(
+                    availability, day_iterator_inclusive(start, end)
+                )
+            ]
+            yield origin_city, destination_city, availability

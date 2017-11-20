@@ -5,6 +5,9 @@ class Airline(models.Model):
     name = models.CharField(max_length=64, unique=True)
     loyalty_scheme_name = models.CharField(max_length=32)
 
+    def __str__(self):
+        return self.name
+
 
 class Location(models.Model):
     CITY = 'CITY'
@@ -22,6 +25,9 @@ class Location(models.Model):
     class Meta:
         unique_together = ('code', 'type')
 
+    def __str__(self):
+        return self.name
+
 
 class Route(models.Model):
     origin = models.ForeignKey(
@@ -34,6 +40,11 @@ class Route(models.Model):
 
     class Meta:
         unique_together = ('origin', 'destination', 'airline')
+
+    def __str__(self):
+        return "{} to {} with {}".format(
+            self.origin, self.destination, self.airline
+        )
 
 
 class RouteAvailability(models.Model):
@@ -50,5 +61,20 @@ class RouteAvailability(models.Model):
     seats_available_3 = models.BooleanField(default=False)
     seats_available_4 = models.BooleanField(default=False)
 
+    @property
+    def some_availability(self):
+        return (
+            self.seats_available_1 or
+            self.seats_available_2 or
+            self.seats_available_3 or
+            self.seats_available_4
+        )
+
     class Meta:
         unique_together = ('route', 'day', 'cabin')
+
+    def __str__(self):
+        return "{} on {} in {}: {}".format(
+            self.route, self.day, self.cabin,
+            'available' if self.some_availability else 'unavailable'
+        )

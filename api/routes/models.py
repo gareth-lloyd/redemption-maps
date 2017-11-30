@@ -49,7 +49,9 @@ class Route(models.Model):
 
 class RouteAvailability(models.Model):
     updated = models.DateTimeField(auto_now=True)
-    route = models.ForeignKey(Route, on_delete=models.PROTECT)
+    route = models.ForeignKey(
+        Route, on_delete=models.PROTECT, related_name='availability'
+    )
     day = models.DateField()
     miles_cost = models.IntegerField(blank=True, null=True)
     cabin = models.CharField(max_length=16)
@@ -60,6 +62,11 @@ class RouteAvailability(models.Model):
     seats_available_2 = models.BooleanField(default=False)
     seats_available_3 = models.BooleanField(default=False)
     seats_available_4 = models.BooleanField(default=False)
+
+    @staticmethod
+    def seat_field_name(seats):
+        assert 1 <= seats <= 4
+        return "seats_available_{}".format(seats)
 
     @property
     def some_availability(self):

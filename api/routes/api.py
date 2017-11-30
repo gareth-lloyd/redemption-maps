@@ -73,7 +73,7 @@ def _store_city_to_city_availability(
             route=route, cabin=cabin, day=day_to_create
         )
 
-    seats_field = 'seats_available_{}'.format(n_passengers)
+    seats_field = routes_models.RouteAvailability.seat_field_name(n_passengers)
     (
         routes_models.RouteAvailability.objects
         .filter(route=route, cabin=cabin, day__gte=start)

@@ -1,3 +1,47 @@
-<p>
-  filters works!
-</p>
+<div class="container">
+  <h1>Hero Form</h1>
+
+  <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="originCode">Origin</label>
+      <input type="text" class="form-control" [(ngModel)]="search.originCode"
+             name="originCode" id="originCode" required>
+    </div>
+    <div class="form-group">
+      <label for="cabin">Cabin</label>
+      <select class="form-control" id="cabin" required
+              [(ngModel)]="search.cabin" name="cabin">
+        <option *ngFor="let cabin of cabins" [value]="cabin">{{ cabin }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="numPassengers">Passengers</label>
+      <select class="form-control" id="numPassengers" required
+              [(ngModel)]="search.numPassengers" name="numPassengers">
+        <option *ngFor="let n of [1,2,3,4]" [value]="n">{{ n }}</option>
+      </select>
+    </div>
+
+    <ngb-datepicker name="date" #dp ngModel (ngModelChange)="onDateChange($event)" [displayMonths]="2" [dayTemplate]="t">
+    </ngb-datepicker>
+
+    <ng-template #t let-date="date" let-focused="focused">
+      <span class="custom-day"
+            [class.focused]="focused"
+            [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+            [class.faded]="isHovered(date) || isInside(date)"
+            (mouseenter)="hoveredDate = date"
+            (mouseleave)="hoveredDate = null">
+        {{ date.day }}
+      </span>
+    </ng-template>
+
+    <hr>
+
+    <pre>From: {{ search.outboundStart | json }} </pre>
+    <pre>To: {{ search.outboundEnd | json }} </pre>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>

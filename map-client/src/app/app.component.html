@@ -4,7 +4,14 @@
   </h1>
   <app-filters (searchSubmit)="newSearch($event)">
   </app-filters>
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3">
+    <agm-marker *ngFor="let ra of routeAvailabilities"
+                [latitude]="ra.route.destination.location.coordinates[1]"
+                [longitude]="ra.route.destination.location.coordinates[0]">
+      <agm-info-window>
+        {{ ra.route.destination.name }}
+        {{ ra.availability }}
+      </agm-info-window>
+    </agm-marker>
   </agm-map>
 </div>

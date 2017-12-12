@@ -23,7 +23,6 @@ export class AppComponent {
       .subscribe(routeAvailabilities => {
         console.log(routeAvailabilities);
         this.routeAvailabilities = routeAvailabilities;
-        debugger;
       });
   }
 }

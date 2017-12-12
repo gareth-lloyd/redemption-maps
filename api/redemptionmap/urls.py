@@ -19,5 +19,5 @@ from routes import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^availability/', views.AvailableRoutes.as_view()),
+    url(r'^api/availability/', views.AvailableRoutes.as_view()),
 ]

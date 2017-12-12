@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FiltersComponent } from './filters/filters.component';
 import { DateRangeComponent } from './date-range/date-range.component';
-
+import { AvailabilityService } from './availability.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +22,10 @@ import { DateRangeComponent } from './date-range/date-range.component';
     }),
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [AvailabilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

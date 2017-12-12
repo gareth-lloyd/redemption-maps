@@ -9,7 +9,19 @@ from routes import (
 
 
 class AvailableRoutes(ListAPIView):
-    filter_backends = (rest_framework.DjangoFilterBackend,)
-    filter_class = routes_filters.AvailableRoutesFilterSet
-    queryset = routes_models.Route.objects.all()
-    serializer_class = routes_serializers.RouteSerializer
+    serializer_class = routes_serializers.CombinedRouteAvailabilitySerializer
+
+    def get_params(self):
+        serializer = routes_serializers.SearchParamsSerializer(
+            data=self.request.query_params
+        )
+        if serializer.is_valid(raise_exception=True):
+            return serializer.validated_data
+
+    def get_queryset(self):
+        params = self.get_params()
+        return [
+            dict(route=route, availability=availability)
+            for route, availability in
+            routes_filters.routes_with_availability(**params)
+        ]

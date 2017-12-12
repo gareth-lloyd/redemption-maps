@@ -1,9 +1,9 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 
 from routes import models as routes_models
 
 
-class RouteAvailabilitySerializer(ModelSerializer):
+class RouteAvailabilitySerializer(serializers.ModelSerializer):
     class Meta:
         model = routes_models.RouteAvailability
         fields = (
@@ -13,25 +13,40 @@ class RouteAvailabilitySerializer(ModelSerializer):
         )
 
 
-class LocationSerializer(ModelSerializer):
+class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = routes_models.Location
         fields = (
             'name',
             'code',
             'type',
+            'location'
         )
 
 
-class RouteSerializer(ModelSerializer):
+class RouteSerializer(serializers.ModelSerializer):
     origin = LocationSerializer()
     destination = LocationSerializer()
-    availability = RouteAvailabilitySerializer(many=True)
 
     class Meta:
         model = routes_models.Route
         fields = (
             'origin',
             'destination',
-            'availability',
         )
+
+
+class CombinedRouteAvailabilitySerializer(serializers.Serializer):
+    route = RouteSerializer()
+    availability = serializers.ListField(
+        child=serializers.DateField()
+    )
+
+
+class SearchParamsSerializer(serializers.Serializer):
+    origin_code = serializers.CharField()
+    destination_code = serializers.CharField(required=False)
+    cabin = serializers.CharField()
+    n_passengers = serializers.IntegerField()
+    when_start = serializers.DateField()
+    when_end = serializers.DateField()

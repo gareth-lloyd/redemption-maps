@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Search }    from '../search';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs/Observable';
+
+import { Search } from '../search';
 
 
 @Component({
@@ -9,10 +11,7 @@ import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent {
-  outboundFrom: NgbDateStruct;
-  outboundTo: NgbDateStruct;
-  inboundFrom: NgbDateStruct;
-  inboundTo: NgbDateStruct;
+  @Output() searchSubmit = new EventEmitter<Search>();
 
   cabins = ['economy', 'premium_economy', 'business', 'first'];
 
@@ -21,16 +20,17 @@ export class FiltersComponent {
   );
 
   outboundDateRangeChanged(dateRange: NgbDateStruct[]) {
-    this.outboundFrom = dateRange[0];
-    this.outboundTo = dateRange[1];
+    this.search.outboundStart = dateRange[0];
+    this.search.outboundEnd = dateRange[1];
   }
+
   inboundDateRangeChanged(dateRange: NgbDateStruct[]) {
-    this.inboundFrom = dateRange[0];
-    this.inboundTo = dateRange[1];
+    this.search.inboundStart = dateRange[0];
+    this.search.inboundEnd = dateRange[1];
   }
 
   onSubmit() {
-    debugger;
+    this.searchSubmit.emit(this.search);
   }
 
 }

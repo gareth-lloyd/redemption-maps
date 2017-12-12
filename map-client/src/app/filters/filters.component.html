@@ -22,24 +22,13 @@
       </select>
     </div>
 
-    <ngb-datepicker name="date" #dp ngModel (ngModelChange)="onDateChange($event)" [displayMonths]="2" [dayTemplate]="t">
-    </ngb-datepicker>
+    <date-range [label]="Outbound"
+                (dateRangeChange)='outboundDateRangeChanged($event)'>
+    </date-range>
 
-    <ng-template #t let-date="date" let-focused="focused">
-      <span class="custom-day"
-            [class.focused]="focused"
-            [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
-            [class.faded]="isHovered(date) || isInside(date)"
-            (mouseenter)="hoveredDate = date"
-            (mouseleave)="hoveredDate = null">
-        {{ date.day }}
-      </span>
-    </ng-template>
-
-    <hr>
-
-    <pre>From: {{ search.outboundStart | json }} </pre>
-    <pre>To: {{ search.outboundEnd | json }} </pre>
+    <date-range [label]="Inbound"
+                (dateRangeChange)='inboundDateRangeChanged($event)'>
+    </date-range>
 
     <button type="submit" class="btn btn-success">Submit</button>
 

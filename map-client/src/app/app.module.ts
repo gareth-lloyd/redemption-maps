@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FiltersComponent } from './filters/filters.component';
+import { DateRangeComponent } from './date-range/date-range.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FiltersComponent
+    FiltersComponent,
+    DateRangeComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

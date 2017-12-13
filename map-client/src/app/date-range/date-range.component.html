@@ -1,11 +1,5 @@
-<div class="form-group">
-  <div class="input-group">
-    <label for="dp">{{ label }}</label>
-    <input class="form-control" id="date-range" (focus)="openDatePicker()" ngModel
-           name="dp" [value]="displayValue()" ngbDatepicker #picker="ngbDatepicker"
-           [displayMonths]="2" [dayTemplate]="t">
-  </div>
-</div>
+<ngb-datepicker #dp ngModel (ngModelChange)="onDateChange($event)" [displayMonths]="2" [dayTemplate]="t">
+</ngb-datepicker>
 
 <ng-template #t let-date="date" let-focused="focused">
   <span class="custom-day"

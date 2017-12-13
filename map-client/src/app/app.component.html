@@ -1,14 +1,58 @@
-<div class="container">
-  <app-filters (searchSubmit)="newSearch($event)">
-  </app-filters>
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3">
-    <agm-marker *ngFor="let ra of routeAvailabilities"
-                [latitude]="ra.route.destination.location.coordinates[1]"
-                [longitude]="ra.route.destination.location.coordinates[0]">
-      <agm-info-window>
-        {{ ra.route.destination.name }}
-        {{ ra.availability }}
-      </agm-info-window>
-    </agm-marker>
-  </agm-map>
-</div>
+<mat-toolbar color="primary">
+  <span>Reward search</span>
+  <span class="toolbar__spacer"></span>
+  <mat-icon class="toolbar__icon">local_airport</mat-icon>
+</mat-toolbar>
+
+<mat-accordion >
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Search
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>date_range</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-filters [search]="search">
+    </app-filters>
+
+    <mat-action-row>
+      <button mat-raised-button color="primary" (click)="doSearch()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Select
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>map</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3">
+      <agm-marker *ngFor="let ra of routeAvailabilities"
+                  [latitude]="ra.route.destination.location.coordinates[1]"
+                  [longitude]="ra.route.destination.location.coordinates[0]">
+        <agm-info-window>
+          {{ ra.route.destination.name }}
+          {{ ra.availability }}
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Choose
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>local_airport</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -19,27 +19,14 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
 })
 export class  DateRangeComponent {
 
-  @Input() label: string;
   @Output() dateRangeChange = new EventEmitter<NgbDateStruct[]>();
-
-  @ViewChild('picker') inputDatePicker;
+  @Output() lastSelectedDate = new EventEmitter<NgbDateStruct>();
 
   hoveredDate: NgbDateStruct;
-
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
 
   constructor(private calendar: NgbCalendar) { }
-
-  ngAfterViewInit() {
-    console.log('registered');
-  }
-
-  openDatePicker() {
-    this.inputDatePicker.open();
-    this.inputDatePicker._cRef.instance.registerOnChange(this.onDateChange.bind(this));
-    this.inputDatePicker._cRef.instance.select.unsubscribe();
-  }
 
   private formatDate(date: NgbDateStruct) : string {
     return (date) ? `${date.day}/${date.month}/${date.year}` : '';
@@ -51,10 +38,11 @@ export class  DateRangeComponent {
     return (fromStr || toStr) ? `${fromStr} - ${toStr}` : '';
   }
 
-  onDateChange(date: NgbDateStruct) {
-    debugger;
-    console.log('on date change');
+  dateSelected(date: NgbDateStruct) {
+    this.lastSelectedDate.emit(date);
+  }
 
+  onDateChange(date: NgbDateStruct) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && after(date, this.fromDate)) {
@@ -65,7 +53,6 @@ export class  DateRangeComponent {
     }
     if(this.fromDate && this.toDate) {
       this.dateRangeChange.emit([this.fromDate, this.toDate]);
-      this.inputDatePicker.close();
     }
   }
 

@@ -4,6 +4,9 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 export class Search {
+  public cabinOptions = ['economy', 'premium_economy', 'business', 'first'];
+  public numPassengersOptions = [1, 2, 3, 4];
+
   constructor(
     public originCode: string,
     public cabin: string,

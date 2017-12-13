@@ -1,27 +1,26 @@
 <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="originCode">Origin</label>
-    <input type="text" class="form-control" [(ngModel)]="search.originCode"
-           name="originCode" id="originCode" required>
-  </div>
-  <div class="form-group">
-    <label for="cabin">Cabin</label>
-    <select class="form-control" id="cabin" required
-            [(ngModel)]="search.cabin" name="cabin">
-      <option *ngFor="let cabin of cabins" [value]="cabin">{{ cabin }}</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="numPassengers">Passengers</label>
-    <select class="form-control" id="numPassengers" required
-            [(ngModel)]="search.numPassengers" name="numPassengers">
-      <option *ngFor="let n of [1,2,3,4]" [value]="n">{{ n }}</option>
-    </select>
-  </div>
+  <mat-form-field class="full-width">
+    <input matInput required placeholder="Origin" name="originCode"
+           [(ngModel)]="search.originCode">
+  </mat-form-field>
 
-  <date-range [label]="Outbound"
-              (dateRangeChange)='outboundDateRangeChanged($event)'>
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Cabin" [(ngModel)]="search.cabin" name="cabin" required>
+      <mat-option *ngFor="let cabin of search.cabinOptions" [value]="cabin">
+        {{ cabin }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-select placeholder="Passengers" [(ngModel)]="search.numPassengers" name="numPassengers" required>
+      <mat-option *ngFor="let n of search.numPassengersOptions" [value]="n">
+        {{ n }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <date-range (dateRangeChange)='outboundDateRangeChanged($event)'>
   </date-range>
 
-  <button type="submit" class="btn btn-success">Search</button>
 </form>

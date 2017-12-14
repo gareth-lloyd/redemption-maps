@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 
 import { RouteAvailability } from './route-availability';
 import { Search } from './search';

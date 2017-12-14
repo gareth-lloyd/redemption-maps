@@ -12,13 +12,15 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field class="full-width">
-    <mat-select placeholder="Passengers" [(ngModel)]="search.numPassengers" name="numPassengers" required>
-      <mat-option *ngFor="let n of search.numPassengersOptions" [value]="n">
+  <div class="mdc-form-field">
+    <label id="num-passengers-label" for="numPassengers">Number of passengers</label>
+    <mat-button-toggle-group [(ngModel)]="search.numPassengers" name="numPassengers"
+                             #group="matButtonToggleGroup" id="numPassengers">
+      <mat-button-toggle *ngFor="let n of search.numPassengersOptions" [value]="n">
         {{ n }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
 
   <date-range (dateRangeChange)='outboundDateRangeChanged($event)'>
   </date-range>

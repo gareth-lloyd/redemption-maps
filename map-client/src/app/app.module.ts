@@ -10,19 +10,24 @@ import { AgmCoreModule } from '@agm/core';
 import { DateRangeComponent } from './date-range/date-range.component';
 import { FiltersComponent } from './filters/filters.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DestinationTableComponent } from './destination-table/destination-table.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FiltersComponent,
-    DateRangeComponent
+    DateRangeComponent,
+    DestinationTableComponent
   ],
   imports: [
     BrowserModule,
@@ -33,11 +38,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
     MatSelectModule,
+    MatTableModule,
     MatToolbarModule,
     NgbModule.forRoot()
   ],

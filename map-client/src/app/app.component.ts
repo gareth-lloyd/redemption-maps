@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { RouteAvailability } from './route-availability';
 import { AvailabilityService } from './availability.service';
 import { Search } from './search';
+import { LOW_CONTRAST } from './map-constants';
 
 
 @Component({
@@ -14,9 +16,13 @@ export class AppComponent {
   lat: number = 51.678;
   lng: number = 0;
   loading: boolean = false;
-  routeAvailabilities: RouteAvailability[];
+
   step: number = 0;
   search: Search = new Search('LON', 'business', 2);
+  styles = LOW_CONTRAST;
+
+  routeAvailabilitiesSubj : BehaviorSubject<RouteAvailability[]> = new BehaviorSubject<RouteAvailability[]>([]);
+  routeAvailabilities : RouteAvailability[];
 
   constructor(private availabilityService: AvailabilityService) {}
 
@@ -25,6 +31,7 @@ export class AppComponent {
     this.availabilityService
       .getAvailability(this.search)
       .subscribe(routeAvailabilities => {
+        this.routeAvailabilitiesSubj.next(routeAvailabilities);
         this.routeAvailabilities = routeAvailabilities;
         this.loading = false;
         this.nextStep();

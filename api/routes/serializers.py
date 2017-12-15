@@ -36,11 +36,14 @@ class RouteSerializer(serializers.ModelSerializer):
         )
 
 
+class AvailabilityDaySerializer(serializers.Serializer):
+    day = serializers.DateField()
+    available = serializers.BooleanField()
+
+
 class CombinedRouteAvailabilitySerializer(serializers.Serializer):
     route = RouteSerializer()
-    availability = serializers.ListField(
-        child=serializers.DateField()
-    )
+    availability = AvailabilityDaySerializer(many=True)
 
 
 class SearchParamsSerializer(serializers.Serializer):

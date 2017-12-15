@@ -1,0 +1,9 @@
+<div class="mdc-form-field">
+  <label id="num-passengers-label" for="numPassengers">Number of passengers</label>
+  <mat-button-toggle-group [(ngModel)]="search.numPassengers" name="numPassengers"
+                           #group="matButtonToggleGroup" id="numPassengers">
+    <mat-button-toggle *ngFor="let n of search.numPassengersOptions" [value]="n">
+      {{ n }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

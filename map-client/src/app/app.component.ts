@@ -18,31 +18,38 @@ export class AppComponent {
   loading: boolean = false;
 
   step: number = 0;
-  search: Search = new Search('LON', 'business', 2);
   styles = LOW_CONTRAST;
 
-  routeAvailabilitiesSubj : BehaviorSubject<RouteAvailability[]> = new BehaviorSubject<RouteAvailability[]>([]);
-  routeAvailabilities : RouteAvailability[];
+  routeAvailabilitiesSubj : BehaviorSubject<RouteAvailability[]> = new BehaviorSubject([]);
+  selectedRouteSubj: BehaviorSubject<RouteAvailability> = new BehaviorSubject(null);
 
   constructor(private availabilityService: AvailabilityService) {}
 
-  doSearch() {
+  doSearch(search) {
     this.loading = true;
+    this.routeAvailabilitiesSubj.next([]);
+    this.selectedRouteSubj.next(null);
     this.availabilityService
-      .getAvailability(this.search)
+      .getAvailability(search)
       .subscribe(routeAvailabilities => {
         this.routeAvailabilitiesSubj.next(routeAvailabilities);
-        this.routeAvailabilities = routeAvailabilities;
         this.loading = false;
         this.nextStep();
       });
+  }
+
+  selectRoute(route: RouteAvailability) {
+    this.selectedRouteSubj.next(route);
+    this.nextStep();
   }
 
   setStep(step : number) {
     this.step = step;
   }
   nextStep() {
-    this.step++;
+    if(this.step < 2) {
+      this.step++;
+    }
   }
   prevStep() {
     if(this.step > 0) {

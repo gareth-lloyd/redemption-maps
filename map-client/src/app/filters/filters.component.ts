@@ -12,7 +12,7 @@ import { Search } from '../search';
 })
 export class FiltersComponent {
   @Output() searchSubmit = new EventEmitter<Search>();
-  @Input() search : Search;
+  search: Search = new Search('LON', 'business', 2);
 
   outboundDateRangeChanged(dateRange: NgbDateStruct[]) {
     this.search.outboundStart = dateRange[0];
@@ -24,7 +24,7 @@ export class FiltersComponent {
     this.search.inboundEnd = dateRange[1];
   }
 
-  onSubmit() {
+  submit() {
     this.searchSubmit.emit(this.search);
   }
 

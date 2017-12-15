@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 import { RouteAvailability } from './route-availability';
 import { Search } from './search';
@@ -15,6 +16,7 @@ export class AvailabilityService {
 
   getAvailability(search: Search) : Observable<RouteAvailability[]> {
     let options = {params: search.asHttpParams()};
-    return this.http.get<RouteAvailability[]>(this.url, options);
+    return this.http.get<RouteAvailability[]>(this.url, options)
+      .map(routeAvailabilities => routeAvailabilities.map(r => new RouteAvailability().fromJSON(r)));
   }
 }

@@ -1,6 +1,16 @@
 from django_filters import rest_framework as filters
 
+from infrastructure.date_util import day_iterator_inclusive
 from routes import models as routes_models
+
+
+def _fill_out(when_start, when_end, available_days):
+    available_days = set(available_days)
+    dicts = [
+        dict(day=day, available=day in available_days)
+        for day in day_iterator_inclusive(when_start, when_end)
+    ]
+    return dicts
 
 
 def routes_with_availability(
@@ -29,9 +39,11 @@ def routes_with_availability(
         days_by_route_id.setdefault(route_id, []).append(day)
 
     routes = routes_models.Route.objects.filter(id__in=days_by_route_id.keys())
-    return [
-        (route, days_by_route_id.get(route.id)) for route in routes
-    ]
+    for route in routes:
+        availability = _fill_out(
+            when_start, when_end, days_by_route_id.get(route.id)
+        )
+        yield route, availability
 
 
 class AvailableRoutesFilterSet(filters.FilterSet):

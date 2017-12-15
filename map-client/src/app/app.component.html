@@ -5,12 +5,12 @@
     <mat-icon class="header__icon">local_airport</mat-icon>
   </mat-toolbar>
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="styles">
-    <agm-marker *ngFor="let ra of routeAvailabilities"
-                [latitude]="ra.route.destination.location.coordinates[1]"
-                [longitude]="ra.route.destination.location.coordinates[0]">
+    <agm-marker *ngFor="let route of routeAvailabilitiesSubj | async"
+                [latitude]="route.route.destination.location.coordinates[1]"
+                [longitude]="route.route.destination.location.coordinates[0]"
+                (markerClick)="selectRoute(route)">
       <agm-info-window>
-        {{ ra.route.destination.name }}
-        {{ ra.availability }}
+        {{ route.route.destination.name }}
       </agm-info-window>
     </agm-marker>
   </agm-map>
@@ -22,15 +22,14 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
           <mat-icon>date_range</mat-icon>
-          {{ search.numPassengers }} from {{ search.originCode }}, {{ search.outboundDisplayValue() }}
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <app-filters [search]="search">
+      <app-filters #filters (searchSubmit)="doSearch($event)">
       </app-filters>
 
       <mat-action-row>
-        <button mat-raised-button color="primary" (click)="doSearch()">Find flights</button>
+        <button mat-raised-button color="primary" (click)="filters.submit()">Find flights</button>
       </mat-action-row>
     </mat-expansion-panel>
 
@@ -42,7 +41,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <app-destination-table [dataObservable]="routeAvailabilitiesSubj">
+      <app-destination-table [dataObservable]="routeAvailabilitiesSubj" (routeSelected)="selectRoute($event)">
       </app-destination-table>
     </mat-expansion-panel>
 
@@ -53,6 +52,8 @@
           Finalise
         </mat-panel-title>
       </mat-expansion-panel-header>
+      <app-availability-detail [selectedRoute]="selectedRouteSubj | async">
+      </app-availability-detail>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

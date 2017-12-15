@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DestinationTableComponent } from './destination-table/destination-table.component';
+import { AvailabilityDetailComponent } from './availability-detail/availability-detail.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DestinationTableComponent } from './destination-table/destination-table
     AppComponent,
     FiltersComponent,
     DateRangeComponent,
-    DestinationTableComponent
+    DestinationTableComponent,
+    AvailabilityDetailComponent
   ],
   imports: [
     BrowserModule,

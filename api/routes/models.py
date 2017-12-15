@@ -21,6 +21,7 @@ class Location(models.Model):
         'self', blank=True, null=True, related_name='children',
     )
     location = models.PointField(blank=True, null=True)
+    is_origin = models.BooleanField(default=False)
 
     class Meta:
         unique_together = ('code', 'type')

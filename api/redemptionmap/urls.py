@@ -20,4 +20,6 @@ from routes import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/availability/', views.AvailableRoutes.as_view()),
+    url(r'^api/destination-cities/', views.DestinationCities.as_view()),
+    url(r'^api/origin-cities/', views.OriginCities.as_view()),
 ]

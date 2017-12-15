@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AvailabilityService } from './availability.service';
+import { LocationService } from './location.service.service';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { DateRangeComponent } from './date-range/date-range.component';

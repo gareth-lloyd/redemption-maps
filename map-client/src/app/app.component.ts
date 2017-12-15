@@ -15,7 +15,6 @@ import { LOW_CONTRAST } from './map-constants';
 export class AppComponent {
   lat: number = 51.678;
   lng: number = 0;
-  loading: boolean = false;
 
   step: number = 0;
   styles = LOW_CONTRAST;
@@ -26,14 +25,12 @@ export class AppComponent {
   constructor(private availabilityService: AvailabilityService) {}
 
   doSearch(search) {
-    this.loading = true;
     this.routeAvailabilitiesSubj.next([]);
     this.selectedRouteSubj.next(null);
     this.availabilityService
       .getAvailability(search)
       .subscribe(routeAvailabilities => {
         this.routeAvailabilitiesSubj.next(routeAvailabilities);
-        this.loading = false;
         this.nextStep();
       });
   }

@@ -42,7 +42,8 @@ class AvailabilityDaySerializer(serializers.Serializer):
 
 
 class CombinedRouteAvailabilitySerializer(serializers.Serializer):
-    route = RouteSerializer()
+    origin_code = serializers.CharField()
+    destination_code = serializers.CharField()
     availability = AvailabilityDaySerializer(many=True)
 
 

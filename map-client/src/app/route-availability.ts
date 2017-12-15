@@ -12,12 +12,12 @@ export class PossibleDay {
 }
 
 export class Route {
-  public origin;
-  public destination;
+  public originCode: string;
+  public destinationCode: string;
 
   fromJSON(json: any) {
-    this.origin = json.origin;
-    this.destination = json.destination;
+    this.originCode = json.origin_code;
+    this.destinationCode = json.destination_code;
     return this;
   }
 }

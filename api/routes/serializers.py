@@ -20,7 +20,8 @@ class LocationSerializer(serializers.ModelSerializer):
             'name',
             'code',
             'type',
-            'location'
+            'location',
+            'is_origin',
         )
 
 
@@ -45,6 +46,7 @@ class CombinedRouteAvailabilitySerializer(serializers.Serializer):
     origin_code = serializers.CharField()
     destination_code = serializers.CharField()
     availability = AvailabilityDaySerializer(many=True)
+    inbound_availability = AvailabilityDaySerializer(many=True)
 
 
 class SearchParamsSerializer(serializers.Serializer):
@@ -52,5 +54,7 @@ class SearchParamsSerializer(serializers.Serializer):
     destination_code = serializers.CharField(required=False)
     cabin = serializers.CharField()
     n_passengers = serializers.IntegerField()
-    when_start = serializers.DateField()
-    when_end = serializers.DateField()
+    outbound_start = serializers.DateField()
+    outbound_end = serializers.DateField()
+    inbound_start = serializers.DateField(required=False)
+    inbound_end = serializers.DateField(required=False)

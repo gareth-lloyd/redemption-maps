@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { RouteAvailability } from './route-availability';
 import { AvailabilityService } from './availability.service';
 import { Search } from './search';
+import { Location } from './location';
 import { LOW_CONTRAST } from './map-constants';
 
 
@@ -23,6 +24,9 @@ export class AppComponent {
   selectedRouteSubj: BehaviorSubject<RouteAvailability> = new BehaviorSubject(null);
 
   constructor(private availabilityService: AvailabilityService) {}
+
+  ngOnInit() {
+  }
 
   doSearch(search) {
     this.routeAvailabilitiesSubj.next([]);

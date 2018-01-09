@@ -20,30 +20,13 @@ class AvailableRoutes(ListAPIView):
 
     def get_queryset(self):
         params = self.get_params()
-        values = []
-        for route, availability in (
-            routes_filters.routes_with_availability(**params)
-        ):
-            origin = route.origin.code
-            destination = route.destination.code
-            values.append(dict(
-                availability=availability, origin_code=origin,
-                destination_code=destination,
-            ))
-        return values
+        return routes_filters.find_route_availabilities(**params)
 
 
-class DestinationCities(ListAPIView):
-    serializer_class = routes_serializers.LocationSerializer
-    queryset = (
-        routes_models.Location.objects.filter(type=routes_models.Location.CITY)
-    )
-
-
-class OriginCities(ListAPIView):
+class LocationsCities(ListAPIView):
     serializer_class = routes_serializers.LocationSerializer
     queryset = (
         routes_models.Location.objects.filter(
-            type=routes_models.Location.CITY, is_origin=True
+            type=routes_models.Location.CITY
         )
     )

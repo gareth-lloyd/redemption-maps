@@ -9,7 +9,7 @@
 
     <ng-container matColumnDef="days">
       <mat-header-cell *matHeaderCellDef>Available days</mat-header-cell>
-      <mat-cell *matCellDef="let route"> {{ route.availability.length }} </mat-cell>
+      <mat-cell *matCellDef="let route"> {{ route.availableDays() }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="select">

@@ -5,11 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AvailabilityService } from './availability.service';
-import { LocationService } from './location.service.service';
+import { LocationService } from './location-service';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { DateRangeComponent } from './date-range/date-range.component';
 import { FiltersComponent } from './filters/filters.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -40,6 +41,7 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatExpansionModule,
@@ -51,7 +53,7 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     MatToolbarModule,
     NgbModule.forRoot()
   ],
-  providers: [AvailabilityService],
+  providers: [AvailabilityService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

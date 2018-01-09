@@ -23,17 +23,17 @@ export class Search {
     params = params.set('cabin', this.cabin);
     params = params.set('n_passengers', this.numPassengers.toString());
     if(this.outboundStart) {
-      params = params.set('when_start', this.formatDateForAPI(this.outboundStart));
+      params = params.set('outbound_start', this.formatDateForAPI(this.outboundStart));
       if(this.outboundEnd) {
-        params = params.set('when_end', this.formatDateForAPI(this.outboundEnd));
+        params = params.set('outbound_end', this.formatDateForAPI(this.outboundEnd));
       }
       else {
-        params = params.set('when_end', this.formatDateForAPI(this.outboundStart));
+        params = params.set('outbound_end', this.formatDateForAPI(this.outboundStart));
       }
     }
     if(this.inboundStart && this.inboundEnd) {
-      params = params.set('when_start', this.formatDateForAPI(this.inboundStart));
-      params = params.set('when_end', this.formatDateForAPI(this.inboundEnd));
+      params = params.set('inbound_start', this.formatDateForAPI(this.inboundStart));
+      params = params.set('inbound_end', this.formatDateForAPI(this.inboundEnd));
     }
     return params;
   }

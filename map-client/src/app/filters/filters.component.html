@@ -3,6 +3,13 @@
     <input matInput required placeholder="Origin" name="originCode"
            [(ngModel)]="search.originCode">
   </mat-form-field>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+      <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
+      <span>{{ state.name }}</span> |
+      <small>Population: {{state.population}}</small>
+    </mat-option>
+  </mat-autocomplete>
 
   <mat-form-field class="full-width">
     <mat-select placeholder="Cabin" [(ngModel)]="search.cabin" name="cabin" required>
@@ -23,4 +30,6 @@
   <date-range (dateRangeChange)='outboundDateRangeChanged($event)'>
   </date-range>
 
+  <date-range (dateRangeChange)='inboundDateRangeChanged($event)'>
+  </date-range>
 </form>

@@ -121,8 +121,8 @@ def update_city_availability(airline, city):
     )
 
     for region in regions:
-        for cabin in ('economy', 'premium_economy', 'business', 'first'):
-            for n_passengers in range(1, 5):
+        for cabin in ('economy',):
+            for n_passengers in [1]:
                 update_city_to_region_availability(
                     airline, city, region, cabin, n_passengers
                 )

@@ -8,6 +8,9 @@ from avios_api import availability, locations
 from infrastructure import date_util
 
 
+CABINS = ['economy', 'premium_economy', 'business', 'first']
+
+
 def _store_location(response_dict, parent=None, location=None):
     return routes_models.Location.objects.get_or_create(
         type=response_dict['type'],
@@ -121,8 +124,15 @@ def update_city_availability(airline, city):
     )
 
     for region in regions:
-        for cabin in ('economy',):
-            for n_passengers in [1]:
+        for cabin in CABINS:
+            for n_passengers in [1, 2, 3, 4]:
                 update_city_to_region_availability(
                     airline, city, region, cabin, n_passengers
                 )
+
+
+def update_availability():
+    airline = routes_models.Airline.objects.get()
+    origin_cities = routes_models.Location.objects.filter(is_origin=True)
+    for origin in origin_cities:
+        update_city_availability(airline, origin)

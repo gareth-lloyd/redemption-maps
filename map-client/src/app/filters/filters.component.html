@@ -1,20 +1,20 @@
 <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
   <mat-form-field class="full-width">
     <input matInput required placeholder="Origin" name="originCode"
-           [(ngModel)]="search.originCode">
+         [formControl]="originCtrl" [matAutocomplete]="auto"
+         [(ngModel)]="search.originCode">
   </mat-form-field>
+
   <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
-      <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
-      <span>{{ state.name }}</span> |
-      <small>Population: {{state.population}}</small>
-    </mat-option>
+     <mat-option *ngFor="let location of filteredLocations | async" [value]="location.code">
+        {{ location.name }}
+     </mat-option>
   </mat-autocomplete>
 
   <mat-form-field class="full-width">
     <mat-select placeholder="Cabin" [(ngModel)]="search.cabin" name="cabin" required>
-      <mat-option *ngFor="let cabin of search.cabinOptions" [value]="cabin">
-        {{ cabin }}
+      <mat-option *ngFor="let cabin of search.cabinKeys" [value]="cabin">
+        {{ search.cabins[cabin] }}
       </mat-option>
     </mat-select>
   </mat-form-field>

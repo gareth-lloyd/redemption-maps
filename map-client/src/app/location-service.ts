@@ -7,25 +7,28 @@ import { Location } from './location';
 
 @Injectable()
 export class LocationService {
-  public locations: {};
+  public allLocations: Location[];
+  private locationsByCode: {};
+  private locationUrl: string = 'http://localhost:8000/api/locations/cities/';
 
   constructor(private http: HttpClient) {
     this.getLocations();
-    this.locations = {};
+    this.locationsByCode = {};
+    this.allLocations = new Array<Location>();
   }
 
   byCode(code): Location {
-    return this.locations[code];
+    return this.locationsByCode[code];
   }
-
-  private locationUrl: string = 'http://localhost:8000/api/locations/cities/';
-
 
   getLocations() {
     return this.http.get<Location[]>(this.locationUrl)
       .map(locationsRaw => locationsRaw.map(l => new Location().fromJSON(l)))
       .subscribe(locations => {
-        locations.map(l => this.locations[l.code] = l);
+        locations.map(l => {
+          this.locationsByCode[l.code] = l;
+          this.allLocations.push(l);
+        })
       })
   }
 

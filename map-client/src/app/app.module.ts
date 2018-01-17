@@ -1,9 +1,11 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { AvailabilityService } from './availability.service';
 import { LocationService } from './location-service';
 import { AppComponent } from './app.component';
@@ -34,11 +36,12 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     AvailabilityDetailComponent
   ],
   imports: [
-    BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBpgPv4Ksu7rb1o_N1zF4N2XaEJ_k-LwQM'
     }),
+    AgmSnazzyInfoWindowModule,
     BrowserAnimationsModule,
+    BrowserModule,
     FormsModule,
     HttpClientModule,
     MatAutocompleteModule,
@@ -51,7 +54,8 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [AvailabilityService, LocationService],
   bootstrap: [AppComponent]

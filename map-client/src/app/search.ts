@@ -4,7 +4,13 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 export class Search {
-  public cabinOptions = ['economy', 'premium_economy', 'business', 'first'];
+  public cabins = {
+    'economy': 'Economy',
+    'premium_economy': 'Premium economy',
+    'business': 'Business',
+    'first': 'First',
+  };
+  public cabinKeys: string[];
   public numPassengersOptions = [1, 2, 3, 4];
 
   constructor(
@@ -15,7 +21,9 @@ export class Search {
     public outboundEnd?: NgbDateStruct,
     public inboundStart?: NgbDateStruct,
     public inboundEnd?: NgbDateStruct
-  ) {  }
+  ) {
+    this.cabinKeys = Object.keys(this.cabins);
+  }
 
   public asHttpParams() : HttpParams {
     let params = new HttpParams();

@@ -1,12 +1,12 @@
 <div *ngIf="selectedRoute">
   {{ selectedRoute.route.destination.name }}
-  <div *ngFor="let possibleDay of selectedRoute.availability"
-       [class.available]="possibleDay.available">
-    {{ possibleDay.day.format('dddd, MMMM Do YYYY') }}
+  <div>
+    <available-dates [possibleDays]="selectedRoute.availability">
+    </available-dates>
+
   </div>
-  <br>
-  <div *ngFor="let possibleDay of selectedRoute.inboundAvailability"
-       [class.available]="possibleDay.available">
-    {{ possibleDay.day.format('dddd, MMMM Do YYYY') }}
+  <div *ngIf="selectedRoute.inboundAvailability">
+    <available-dates [possibleDays]="selectedRoute.inboundAvailability">
+    </available-dates>
   </div>
 </div>

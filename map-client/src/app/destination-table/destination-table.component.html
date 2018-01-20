@@ -1,4 +1,7 @@
 <div class="destination-table-container">
+  <div *ngIf="this.dataSource.data.length === 0">
+    No Availability found
+  </div>
 
   <mat-table #table [dataSource]="dataSource">
 

@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
 import { map } from 'rxjs/operators/map';
 
+import { AppStateService } from '../app-state.service';
+import { DateRangeComponent } from '../date-range/date-range.component';
 import { Location } from '../location';
 import { LocationService } from '../location-service';
 import { Search } from '../search';
@@ -21,7 +23,12 @@ export class FiltersComponent {
   search: Search = new Search('LON', 'business', 2);
   filteredLocations: Observable<Location[]>;
 
-  constructor(private locationService: LocationService) { }
+  @ViewChild('inboundDateRange') inboundDateRange: DateRangeComponent;
+
+  constructor(
+    private locationService: LocationService,
+    public appState: AppStateService
+  ) {}
 
   ngOnInit() {
     this.filteredLocations = this.originCtrl.valueChanges
@@ -46,6 +53,7 @@ export class FiltersComponent {
   outboundDateRangeChanged(dateRange: NgbDateStruct[]) {
     this.search.outboundStart = dateRange[0];
     this.search.outboundEnd = dateRange[1];
+    this.inboundDateRange.setMin(dateRange[0]);
   }
 
   inboundDateRangeChanged(dateRange: NgbDateStruct[]) {

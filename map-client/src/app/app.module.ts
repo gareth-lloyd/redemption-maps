@@ -6,7 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { AppStateService } from './app-state.service';
 import { AvailabilityService } from './availability.service';
+import { AvailableDatesComponent } from './available-dates/available-dates.component';
 import { LocationService } from './location-service';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
@@ -19,6 +21,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,6 +33,7 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
 @NgModule({
   declarations: [
     AppComponent,
+    AvailableDatesComponent,
     FiltersComponent,
     DateRangeComponent,
     DestinationTableComponent,
@@ -51,13 +55,14 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     MatSelectModule,
     MatTableModule,
     MatToolbarModule,
     NgbModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [AvailabilityService, LocationService],
+  providers: [AppStateService, AvailabilityService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

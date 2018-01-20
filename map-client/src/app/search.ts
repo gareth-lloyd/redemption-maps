@@ -39,9 +39,14 @@ export class Search {
         params = params.set('outbound_end', this.formatDateForAPI(this.outboundStart));
       }
     }
-    if(this.inboundStart && this.inboundEnd) {
+    if(this.inboundStart) {
       params = params.set('inbound_start', this.formatDateForAPI(this.inboundStart));
-      params = params.set('inbound_end', this.formatDateForAPI(this.inboundEnd));
+      if (this.inboundEnd) {
+        params = params.set('inbound_end', this.formatDateForAPI(this.inboundEnd));
+      }
+      else {
+        params = params.set('inbound_end', this.formatDateForAPI(this.inboundStart));
+      }
     }
     return params;
   }

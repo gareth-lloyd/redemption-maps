@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { RouteAvailability } from './route-availability';
 import { AvailabilityService } from './availability.service';
+import { AppStateService, AppState } from './app-state.service';
 import { Search } from './search';
 import { Location } from './location';
 import { LOW_CONTRAST } from './map-constants';
@@ -17,44 +18,33 @@ export class AppComponent {
   lat: number = 51.678;
   lng: number = 0;
 
-  step: number = 0;
   styles = LOW_CONTRAST;
+  loading: boolean = false;
 
   routeAvailabilitiesSubj : BehaviorSubject<RouteAvailability[]> = new BehaviorSubject([]);
-  selectedRouteSubj: BehaviorSubject<RouteAvailability> = new BehaviorSubject(null);
+  selectedRoute: RouteAvailability;
 
-  constructor(private availabilityService: AvailabilityService) {}
-
-  ngOnInit() {
-  }
+  constructor(
+    private availabilityService: AvailabilityService,
+    public appState: AppStateService
+  ) {}
 
   doSearch(search) {
     this.routeAvailabilitiesSubj.next([]);
-    this.selectedRouteSubj.next(null);
+    this.selectedRoute = null;
+    this.loading = true;
+    this.appState.setState(AppState.SelectDestination);
     this.availabilityService
       .getAvailability(search)
       .subscribe(routeAvailabilities => {
         this.routeAvailabilitiesSubj.next(routeAvailabilities);
-        this.nextStep();
+        this.loading = false;
       });
   }
 
   selectRoute(route: RouteAvailability) {
-    this.selectedRouteSubj.next(route);
-    this.nextStep();
+    this.selectedRoute = route;
+    this.appState.setState(AppState.ViewAvailability);
   }
 
-  setStep(step : number) {
-    this.step = step;
-  }
-  nextStep() {
-    if(this.step < 2) {
-      this.step++;
-    }
-  }
-  prevStep() {
-    if(this.step > 0) {
-      this.step--;
-    }
-  }
 }

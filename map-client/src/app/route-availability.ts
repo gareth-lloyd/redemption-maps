@@ -1,12 +1,14 @@
-import * as moment from 'moment';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Location } from './location';
 
 export class PossibleDay {
-  day: moment.Moment;
+  day: NgbDateStruct;
   available: boolean;
 
   fromJSON(json: any) {
-    this.day = moment(json.day);
+    let components = json.day.split('-');
+    components = components.map(s => parseInt(s));
+    this.day = {year: components[0], month: components[1], day: components[2]};
     this.available = json.available;
     return this;
   }
@@ -33,7 +35,9 @@ export class RouteAvailability {
 
   fromJSON(json: any) {
     this.availability = json.availability.map(a => new PossibleDay().fromJSON(a));
-    this.inboundAvailability = json.inbound_availability.map(a => new PossibleDay().fromJSON(a));
+    if (json.inbound_availability) {
+      this.inboundAvailability = json.inbound_availability.map(a => new PossibleDay().fromJSON(a));
+    }
     return this;
   }
 }

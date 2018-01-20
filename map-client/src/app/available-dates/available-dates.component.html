@@ -1,0 +1,8 @@
+<ngb-datepicker #dp [(ngModel)]="selectedDate" (ngModelChange)="onDateChange($event)"
+                [displayMonths]="2"
+                [navigation]="arrows"
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [markDisabled]="markDisabled"
+                [outsideDays]='visible'>
+</ngb-datepicker>

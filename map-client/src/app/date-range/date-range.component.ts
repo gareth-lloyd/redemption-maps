@@ -21,11 +21,16 @@ export class  DateRangeComponent {
 
   @Output() dateRangeChange = new EventEmitter<NgbDateStruct[]>();
 
+  minDate: NgbDateStruct;
   hoveredDate: NgbDateStruct;
   fromDate: NgbDateStruct;
   toDate: NgbDateStruct;
+  today: NgbDateStruct;
 
-  constructor(private calendar: NgbCalendar) { }
+
+  constructor(private calendar: NgbCalendar) {
+    this.today = calendar.getToday();
+  }
 
   onDateChange(date: NgbDateStruct) {
     if (!this.fromDate && !this.toDate) {
@@ -38,6 +43,12 @@ export class  DateRangeComponent {
     }
     this.dateRangeChange.emit([this.fromDate, this.toDate]);
   }
+
+  setMin(date: NgbDateStruct) {
+    this.minDate = date;
+  }
+
+  markDisabled = date => before(date, this.today) || this.minDate && before(date, this.minDate);
 
   isHovered = date => this.fromDate && !this.toDate && this.hoveredDate && after(date, this.fromDate) && before(date, this.hoveredDate);
   isInside = date => after(date, this.fromDate) && before(date, this.toDate);

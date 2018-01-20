@@ -25,7 +25,6 @@ def find_route_availabilities(
         route.destination: RouteAvailability(
             route,
             availability=outbound_by_route[route],
-            inbound_availability=availability
         )
         for route, availability in outbound_by_route.items()
     }
@@ -84,7 +83,7 @@ def routes_with_availability(
         .prefetch_related('destination', 'origin')
     )
     return {
-        route: _fill_out( when_start, when_end, days_by_route_id.get(route.id))
+        route: _fill_out(when_start, when_end, days_by_route_id.get(route.id))
         for route in routes
     }
 

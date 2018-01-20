@@ -1,9 +1,4 @@
 <div class="fullscreen">
-  <mat-toolbar color="primary" class="header">
-    <span>Reward search</span>
-    <span class="header__spacer"></span>
-    <mat-icon class="header__icon">local_airport</mat-icon>
-  </mat-toolbar>
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="styles">
     <agm-marker *ngFor="let route of routeAvailabilitiesSubj | async"
                 [latitude]="route.route.destination.location.coordinates[1]"
@@ -21,43 +16,35 @@
 </div>
 
 <div class="controls mat-elevation-z4">
-  <mat-accordion>
-    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>date_range</mat-icon>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
+  <app-filters #filters (searchSubmit)="doSearch($event)">
+  </app-filters>
 
-      <app-filters #filters (searchSubmit)="doSearch($event)">
-      </app-filters>
+  <mat-expansion-panel [expanded]="appState.state == 'select'"
+                       (opened)="appState.setState('select')">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>list</mat-icon>
+        Select
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-      <mat-action-row>
-        <button mat-raised-button color="primary" (click)="filters.submit()">Find flights</button>
-      </mat-action-row>
-    </mat-expansion-panel>
+    <mat-spinner *ngIf="loading">
+    </mat-spinner>
+    <app-destination-table *ngIf="!loading"
+                           [dataObservable]="routeAvailabilitiesSubj"
+                           (routeSelected)="selectRoute($event)">
+    </app-destination-table>
+  </mat-expansion-panel>
 
-    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>map</mat-icon>
-          Select
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <app-destination-table [dataObservable]="routeAvailabilitiesSubj" (routeSelected)="selectRoute($event)">
-      </app-destination-table>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>local_airport</mat-icon>
-          Finalise
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <app-availability-detail [selectedRoute]="selectedRouteSubj | async">
-      </app-availability-detail>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <mat-expansion-panel [expanded]="appState.state == 'view'"
+                       (opened)="appState.setState('view')">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>local_airport</mat-icon>
+        Finalise
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-availability-detail [selectedRoute]="selectedRoute">
+    </app-availability-detail>
+  </mat-expansion-panel>
 </div>

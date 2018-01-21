@@ -22,6 +22,8 @@ export class FiltersComponent {
   @Output() searchSubmit = new EventEmitter<Search>();
   search: Search = new Search('LON', 'business', 2);
   filteredLocations: Observable<Location[]>;
+  outboundSelected: boolean = false;
+  inboundSelected: boolean = false;
 
   @ViewChild('inboundDateRange') inboundDateRange: DateRangeComponent;
 
@@ -54,11 +56,13 @@ export class FiltersComponent {
     this.search.outboundStart = dateRange[0];
     this.search.outboundEnd = dateRange[1];
     this.inboundDateRange.setMin(dateRange[0]);
+    this.outboundSelected = true;
   }
 
   inboundDateRangeChanged(dateRange: NgbDateStruct[]) {
     this.search.inboundStart = dateRange[0];
     this.search.inboundEnd = dateRange[1];
+    this.inboundSelected = true;
   }
 
   submit() {

@@ -1,12 +1,31 @@
 <div *ngIf="selectedRoute">
-  {{ selectedRoute.route.destination.name }}
+  <h2>
+    {{ selectedRoute.route.destination.name }}
+  </h2>
   <div>
-    <available-dates [possibleDays]="selectedRoute.availability">
+    <h3>Outbound available dates</h3>
+    <available-dates [possibleDays]="selectedRoute.availability"
+                     (selectionChange)="outboundSelected($event)">
     </available-dates>
 
   </div>
   <div *ngIf="selectedRoute.inboundAvailability">
-    <available-dates [possibleDays]="selectedRoute.inboundAvailability">
+    <h3>Inbound available dates</h3>
+    <available-dates [possibleDays]="selectedRoute.inboundAvailability"
+                     (selectionChange)="inboundSelected($event)">
+
     </available-dates>
+  </div>
+
+  <div>
+    {{ selectedRoute.route.origin.name }}
+    to
+    {{ selectedRoute.route.destination.name }}
+    departing
+    {{ outboundDateStr }}
+    <span *ngIf="inboundDateStr">
+      returning
+      {{ inboundDateStr }}
+    </span>
   </div>
 </div>

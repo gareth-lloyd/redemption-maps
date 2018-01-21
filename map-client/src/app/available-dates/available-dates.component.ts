@@ -17,7 +17,7 @@ export class  AvailableDatesComponent {
   private selectedDate: NgbDateStruct;
   private minDate: NgbDateStruct;
 
-  @Output() selectionChange= new EventEmitter<NgbDateStruct>();
+  @Output() selectionChange = new EventEmitter<NgbDateStruct>();
   @ViewChild('dp') datePicker: NgbDatepicker;
 
   @Input()
@@ -25,13 +25,20 @@ export class  AvailableDatesComponent {
     if (possibleDays.length) {
       this.minDate = possibleDays[0].day;
     }
+    if (possibleDays.length === 1) {
+      this.selectedDate = this.minDate;
+    }
+    else {
+      this.selectedDate = null;
+    }
     this._possibleDays = possibleDays;
+    // Hack to clear current disabled days
     this.datePicker.navigateTo({year: 2029, month: 2});
     this.datePicker.navigateTo(this.minDate);
   }
 
   onDateChange() {
-    this.selectionChange.emit();
+    this.selectionChange.emit(this.selectedDate);
   }
 
   markDisabled = date => !this._possibleDays.some(possibleDay => equals(date, possibleDay.day) && possibleDay.available);

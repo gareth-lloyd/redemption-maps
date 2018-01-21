@@ -9,8 +9,8 @@
 
     <mat-form-field class="full-width">
       <input matInput required placeholder="Origin" name="originCode"
-           [formControl]="originCtrl" [matAutocomplete]="auto"
-           [(ngModel)]="search.originCode">
+             [formControl]="originCtrl" [matAutocomplete]="auto"
+             [(ngModel)]="search.originCode">
     </mat-form-field>
 
     <mat-autocomplete #auto="matAutocomplete">
@@ -54,6 +54,7 @@
     </date-range>
     <mat-action-row>
       <button mat-raised-button color="primary"
+              [disabled]="!outboundSelected"
               (click)="appState.setState('inbound')">
         Next
       </button>
@@ -71,11 +72,9 @@
     <date-range #inboundDateRange (dateRangeChange)='inboundDateRangeChanged($event)'>
     </date-range>
     <mat-action-row>
-      <button mat-raised-button color="secondary" (click)="submit()">
-        Skip
-      </button>
       <button mat-raised-button color="primary" (click)="submit()">
-        Next
+        <span *ngIf="!inboundSelected">One-way only</span>
+        <span *ngIf="inboundSelected">Next</span>
       </button>
     </mat-action-row>
   </mat-expansion-panel>

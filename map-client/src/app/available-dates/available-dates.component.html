@@ -1,8 +1,17 @@
-<ngb-datepicker #dp [(ngModel)]="selectedDate" (ngModelChange)="onDateChange($event)"
+<ngb-datepicker #dp
+                [dayTemplate]="dt"
                 [displayMonths]="2"
                 [navigation]="arrows"
+                [(ngModel)]="selectedDate"
+                (ngModelChange)="onDateChange($event)"
                 [minDate]="minDate"
                 [maxDate]="maxDate"
-                [markDisabled]="markDisabled"
-                [outsideDays]='visible'>
+                [markDisabled]="markDisabled">
 </ngb-datepicker>
+
+<ng-template #dt let-date="date" let-selected="selected" let-disabled="disabled" let-focused="focused">
+  <span class="available-day" [class.focused]="focused"
+        [class.bg-primary]="selected" [class.disabled]="disabled">
+    {{ date.day }}
+  </span>
+</ng-template>

@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.5.5",
     "@agm/core": "^1.0.0-beta.2",
     "@agm/snazzy-info-window": "^1.0.0-beta.2",
     "@angular/animations": "^5.1.0",
@@ -33,7 +34,6 @@
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.5.5",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
@@ -52,5 +52,8 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
+  },
+  "scripts": {
+        "postinstall": "ng build --aot -prod"
   }
 }

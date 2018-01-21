@@ -26,7 +26,7 @@ SECRET_KEY = 'z^pst*1hoygz+sq0zd^i+p2^k_qkv0uxo+hk1wp5514$91-!*$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['redemption-map.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'redemption-map.herokuapp.com']
 
 
 # Application definition

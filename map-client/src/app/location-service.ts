@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 
 import { Location } from './location';
 
+
 @Injectable()
 export class LocationService {
   public allLocations: Location[];

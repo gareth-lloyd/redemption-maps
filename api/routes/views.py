@@ -1,11 +1,16 @@
 from django.shortcuts import render
 
 from django_filters import rest_framework
+from django.views.generic import TemplateView
 from rest_framework.generics import ListAPIView
 
 from routes import (
     filters as routes_filters, models as routes_models,
     serializers as routes_serializers)
+
+
+class Home(TemplateView):
+    template_name = 'routes/home.html'
 
 
 class AvailableRoutes(ListAPIView):

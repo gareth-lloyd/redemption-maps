@@ -143,6 +143,3 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
-
-GEOS_LIBRARY_PATH = os.path.join(os.environ.get('GEOS_LIBRARY_PATH', ''), 'libgeos_c.so')
-GDAL_LIBRARY_PATH = os.path.join(os.environ.get('GDAL_LIBRARY_PATH', ''), 'libgdal.so')

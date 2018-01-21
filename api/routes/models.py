@@ -19,6 +19,7 @@ class Location(models.Model):
     type = models.CharField(max_length=16, db_index=True)
     parent = models.ForeignKey(
         'self', blank=True, null=True, related_name='children',
+        on_delete=models.PROTECT
     )
     location = models.PointField(blank=True, null=True)
     is_origin = models.BooleanField(default=False)

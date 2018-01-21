@@ -14,8 +14,8 @@ const equals = (one: NgbDateStruct, two: NgbDateStruct) =>
 })
 export class  AvailableDatesComponent {
   private _possibleDays: PossibleDay[] = new Array<PossibleDay>();
-  private selectedDate: NgbDateStruct;
-  private minDate: NgbDateStruct;
+  selectedDate: NgbDateStruct;
+  minDate: NgbDateStruct;
 
   @Output() selectionChange = new EventEmitter<NgbDateStruct>();
   @ViewChild('dp') datePicker: NgbDatepicker;

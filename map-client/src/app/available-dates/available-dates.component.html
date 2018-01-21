@@ -1,11 +1,10 @@
 <ngb-datepicker #dp
                 [dayTemplate]="dt"
                 [displayMonths]="2"
-                [navigation]="arrows"
+                [navigation]="'arrows'"
                 [(ngModel)]="selectedDate"
-                (ngModelChange)="onDateChange($event)"
+                (ngModelChange)="onDateChange()"
                 [minDate]="minDate"
-                [maxDate]="maxDate"
                 [markDisabled]="markDisabled">
 </ngb-datepicker>
 

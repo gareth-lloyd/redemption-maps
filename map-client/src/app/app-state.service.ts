@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 
 
-export enum AppState {
-  SearchOptions = "search",
-  OutboundDates = "outboudn",
-  InboundDates = "inbound",
-  SelectDestination = "select",
-  ViewAvailability = "view"
+export const AppState = {
+  SearchOptions: "search",
+  OutboundDates: "outbound",
+  InboundDates: "inbound",
+  SelectDestination: "select",
+  ViewAvailability: "view"
 }
 
 @Injectable()
 export class AppStateService {
-  state: AppState = AppState.SearchOptions;
+  public state: string = AppState.SearchOptions;
 
-  setState(state: AppState) {
+  setState(state: string) {
     this.state = state;
   }
 }

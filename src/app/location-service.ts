@@ -10,7 +10,7 @@ import { Location } from './location';
 export class LocationService {
   public allLocations: Location[];
   private locationsByCode: {};
-  private locationUrl: string = 'http://localhost:8000/api/locations/cities/';
+  private locationUrl: string = '/api/locations/cities/';
 
   constructor(private http: HttpClient) {
     this.getLocations();

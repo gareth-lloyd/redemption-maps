@@ -11,7 +11,7 @@ import { Search } from './search';
 
 @Injectable()
 export class AvailabilityService {
-  private url: string = 'http://localhost:8000/api/availability/';
+  private url: string = '/api/availability/';
 
   constructor(private http: HttpClient, private locationService: LocationService) { }
 

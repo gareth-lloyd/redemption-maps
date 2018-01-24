@@ -1,4 +1,5 @@
 from datetime import date
+import time
 
 from django.db import transaction
 from django.utils import timezone
@@ -126,6 +127,7 @@ def update_city_availability(airline, city):
     for region in regions:
         for cabin in CABINS:
             for n_passengers in [1, 2, 3, 4]:
+                time.sleep(2)
                 update_city_to_region_availability(
                     airline, city, region, cabin, n_passengers
                 )

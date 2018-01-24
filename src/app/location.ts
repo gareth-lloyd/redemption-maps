@@ -1,9 +1,13 @@
+export class GeoLocation {
+  public coordinates: number[];
+}
+
 export class Location {
   public code: string;
   public name: string;
   public type: string;
   public isOrign: boolean;
-  public location: object;
+  public location: GeoLocation;
   public parent: Location;
 
   fromJSON(json: any) {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 
 export const AppState = {
+  Intro: "intro",
   SearchOptions: "search",
   OutboundDates: "outbound",
   InboundDates: "inbound",
@@ -11,7 +12,7 @@ export const AppState = {
 
 @Injectable()
 export class AppStateService {
-  public state: string = AppState.SearchOptions;
+  public state: string = AppState.Intro;
 
   setState(state: string) {
     this.state = state;

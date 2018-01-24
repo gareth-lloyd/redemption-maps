@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
@@ -10,7 +11,7 @@ import { Location } from './location';
 export class LocationService {
   public allLocations: Location[];
   private locationsByCode: {};
-  private locationUrl: string = '/api/locations/cities/';
+  private locationUrl: string = environment.server + '/api/locations/cities/';
 
   constructor(private http: HttpClient) {
     this.getLocations();

@@ -24,16 +24,20 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon>list</mat-icon>
-        Select
+        Select Destination
       </mat-panel-title>
     </mat-expansion-panel-header>
 
     <mat-spinner *ngIf="loading">
     </mat-spinner>
-    <app-destination-table *ngIf="!loading"
-                           [dataObservable]="routeAvailabilitiesSubj"
-                           (routeSelected)="selectRoute($event)">
-    </app-destination-table>
+
+    <div *ngIf="!loading">
+      <p><em></em></p>
+      <app-destination-table
+                             [dataObservable]="routeAvailabilitiesSubj"
+                             (routeSelected)="selectRoute($event)">
+      </app-destination-table>
+    </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel [expanded]="appState.state == 'view'"
@@ -41,7 +45,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title>
         <mat-icon>local_airport</mat-icon>
-        Finalise
+        Finalise your trip
       </mat-panel-title>
     </mat-expansion-panel-header>
     <app-availability-detail [selectedRoute]="selectedRoute">

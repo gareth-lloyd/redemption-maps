@@ -10,13 +10,14 @@ import { AppStateService } from './app-state.service';
 import { AvailabilityService } from './availability.service';
 import { AvailableDatesComponent } from './available-dates/available-dates.component';
 import { LocationService } from './location-service';
-import { AppComponent } from './app.component';
+import { AppComponent, IntroDialog } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { DateRangeComponent } from './date-range/date-range.component';
 import { FiltersComponent } from './filters/filters.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,10 +35,14 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
   declarations: [
     AppComponent,
     AvailableDatesComponent,
+    IntroDialog,
     FiltersComponent,
     DateRangeComponent,
     DestinationTableComponent,
     AvailabilityDetailComponent
+  ],
+  entryComponents: [
+    IntroDialog
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -51,6 +56,7 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatDialogModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatIconModule,

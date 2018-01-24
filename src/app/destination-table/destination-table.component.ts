@@ -15,7 +15,7 @@ export class DestinationTableComponent {
   @Output() routeSelected: EventEmitter<RouteAvailability> = new EventEmitter();
   dataSource : MatTableDataSource<RouteAvailability> = new MatTableDataSource([]);
 
-  displayedColumns = ['name', 'days', 'select'];
+  displayedColumns = ['name', 'days', 'inboundDays', 'select'];
 
   ngOnInit() {
     this.dataObservable

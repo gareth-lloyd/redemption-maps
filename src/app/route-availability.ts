@@ -29,6 +29,10 @@ export class RouteAvailability {
     return this.availability.filter(a => a.available).length;
   }
 
+  availableInboundDays(): number {
+    return this.inboundAvailability.filter(a => a.available).length;
+  }
+
   public constructor(origin: Location, destination: Location) {
     this.route = new Route(origin, destination);
   }

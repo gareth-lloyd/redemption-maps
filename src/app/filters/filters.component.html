@@ -7,33 +7,40 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <mat-form-field class="full-width">
-      <input matInput required placeholder="Origin" name="originCode"
-             [formControl]="originCtrl" [matAutocomplete]="auto"
-             [(ngModel)]="search.originCode">
-    </mat-form-field>
+    <p>
+      <mat-form-field class="full-width">
+        <input matInput required placeholder="Origin" name="originCode"
+               [formControl]="originCtrl" [matAutocomplete]="auto"
+               [(ngModel)]="search.originCode">
+        <mat-hint align="start">Direct flights only – London has the most outbound flights</mat-hint>
+      </mat-form-field>
 
-    <mat-autocomplete #auto="matAutocomplete">
-       <mat-option *ngFor="let location of filteredLocations | async" [value]="location.code">
-          {{ location.name }}
-       </mat-option>
-    </mat-autocomplete>
+      <mat-autocomplete #auto="matAutocomplete">
+         <mat-option *ngFor="let location of filteredLocations | async" [value]="location.code">
+            {{ location.name }}
+         </mat-option>
+      </mat-autocomplete>
+    </p>
 
-    <mat-form-field class="full-width">
-      <mat-select placeholder="Cabin" [(ngModel)]="search.cabin" name="cabin" required>
-        <mat-option *ngFor="let cabin of search.cabinKeys" [value]="cabin">
-          {{ search.cabins[cabin] }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Cabin" [(ngModel)]="search.cabin" name="cabin" required>
+          <mat-option *ngFor="let cabin of search.cabinKeys" [value]="cabin">
+            {{ search.cabins[cabin] }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
 
-    <mat-form-field class="full-width">
-      <mat-select placeholder="Passengers" [(ngModel)]="search.numPassengers" name="numPassengers" required>
-        <mat-option *ngFor="let n of search.numPassengersOptions" [value]="n">
-          {{ n }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Number of Passengers" [(ngModel)]="search.numPassengers" name="numPassengers" required>
+          <mat-option *ngFor="let n of search.numPassengersOptions" [value]="n">
+            {{ n }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
 
     <mat-action-row>
       <button mat-raised-button color="primary"
@@ -50,8 +57,11 @@
         <mat-icon>flight_takeoff</mat-icon> Outbound dates
       </mat-panel-title>
     </mat-expansion-panel-header>
+
+    <p><em>You can click twice to select a range</em></p>
     <date-range (dateRangeChange)='outboundDateRangeChanged($event)'>
     </date-range>
+
     <mat-action-row>
       <button mat-raised-button color="primary"
               [disabled]="!outboundSelected"
@@ -69,6 +79,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
+    <p><em>You can click twice to select a range</em></p>
     <date-range #inboundDateRange (dateRangeChange)='inboundDateRangeChanged($event)'>
     </date-range>
     <mat-action-row>

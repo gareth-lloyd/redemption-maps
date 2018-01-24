@@ -4,6 +4,7 @@ import { RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
+import { environment } from '../environments/environment';
 import { LocationService } from './location-service';
 import { RouteAvailability } from './route-availability';
 import { Search } from './search';
@@ -11,7 +12,7 @@ import { Search } from './search';
 
 @Injectable()
 export class AvailabilityService {
-  private url: string = '/api/availability/';
+  private url: string = environment.server + '/api/availability/';
 
   constructor(private http: HttpClient, private locationService: LocationService) { }
 

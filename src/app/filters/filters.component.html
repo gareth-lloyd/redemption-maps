@@ -1,17 +1,14 @@
-<form #searchForm="ngForm">
-  <mat-expansion-panel [expanded]="appState.state == 'search'"
-                       (opened)="appState.setState('search')">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>input</mat-icon>Options
-      </mat-panel-title>
-    </mat-expansion-panel-header>
+<form *ngIf="form" [formGroup]="form">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-icon>input</mat-icon>
+      <mat-card-title>Filters</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
 
-    <p>
       <mat-form-field class="full-width">
-        <input matInput required placeholder="Origin" name="originCode"
-               [formControl]="originCtrl" [matAutocomplete]="auto"
-               [(ngModel)]="search.originCode">
+        <input matInput placeholder="Origin" required
+               formControlName="originCode" [matAutocomplete]="auto">
         <mat-hint align="start">Direct flights only – London has the most outbound flights</mat-hint>
       </mat-form-field>
 
@@ -20,73 +17,28 @@
             {{ location.name }}
          </mat-option>
       </mat-autocomplete>
-    </p>
 
-    <p>
       <mat-form-field class="full-width">
-        <mat-select placeholder="Cabin" [(ngModel)]="search.cabin" name="cabin" required>
-          <mat-option *ngFor="let cabin of search.cabinKeys" [value]="cabin">
-            {{ search.cabins[cabin] }}
+        <mat-select placeholder="Cabin" formControlName="cabin" required>
+          <mat-option *ngFor="let cabin of availabilityService.search.cabinKeys" [value]="cabin">
+            {{ availabilityService.search.cabins[cabin] }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </p>
 
-    <p>
       <mat-form-field class="full-width">
-        <mat-select placeholder="Number of Passengers" [(ngModel)]="search.numPassengers" name="numPassengers" required>
-          <mat-option *ngFor="let n of search.numPassengersOptions" [value]="n">
+        <mat-select placeholder="Number of Passengers"
+                    formControlName="numPassengers" required>
+          <mat-option *ngFor="let n of availabilityService.search.numPassengersOptions" [value]="n">
             {{ n }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </p>
 
-    <mat-action-row>
-      <button mat-raised-button color="primary"
-              (click)="appState.setState('outbound')">
-        Next
-      </button>
-    </mat-action-row>
-  </mat-expansion-panel>
+    </mat-card-content>
 
-  <mat-expansion-panel [expanded]="appState.state == 'outbound'"
-                       (opened)="appState.setState('outbound')">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>flight_takeoff</mat-icon> Outbound dates
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-
-    <p><em>You can click twice to select a range</em></p>
-    <date-range (dateRangeChange)='outboundDateRangeChanged($event)'>
-    </date-range>
-
-    <mat-action-row>
-      <button mat-raised-button color="primary"
-              [disabled]="!outboundSelected"
-              (click)="appState.setState('inbound')">
-        Next
-      </button>
-    </mat-action-row>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel [expanded]="appState.state == 'inbound'"
-                       (opened)="appState.setState('inbound')">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>flight_land</mat-icon> Inbound dates
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-
-    <p><em>You can click twice to select a range</em></p>
-    <date-range #inboundDateRange (dateRangeChange)='inboundDateRangeChanged($event)'>
-    </date-range>
-    <mat-action-row>
-      <button mat-raised-button color="primary" (click)="submit()">
-        <span *ngIf="!inboundSelected">One-way only</span>
-        <span *ngIf="inboundSelected">Next</span>
-      </button>
-    </mat-action-row>
-  </mat-expansion-panel>
+    <mat-card-actions>
+      <button (click)="submit()" mat-button>Next</button>
+    </mat-card-actions>
+  </mat-card>
 </form>

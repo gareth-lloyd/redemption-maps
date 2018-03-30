@@ -1,0 +1,14 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="styles">
+  <agm-marker *ngFor="let route of routeAvailabilitiesSubj | async"
+              [latitude]="route.route.destination.location.coordinates[1]"
+              [longitude]="route.route.destination.location.coordinates[0]"
+              (markerClick)="selectRoute(route)">
+    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <ng-template>
+        {{ route.route.origin.name }}
+        to
+        {{ route.route.destination.name }}
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+</agm-map>

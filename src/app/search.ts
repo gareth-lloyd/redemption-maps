@@ -14,9 +14,9 @@ export class Search {
   public numPassengersOptions = [1, 2, 3, 4];
 
   constructor(
-    public originCode: string,
-    public cabin: string,
-    public numPassengers: number,
+    public originCode?: string,
+    public cabin?: string,
+    public numPassengers?: number,
     public outboundStart?: NgbDateStruct,
     public outboundEnd?: NgbDateStruct,
     public inboundStart?: NgbDateStruct,

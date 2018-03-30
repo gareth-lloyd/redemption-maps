@@ -6,17 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
-import { AppStateService } from './app-state.service';
-import { AvailabilityService } from './availability.service';
-import { AvailableDatesComponent } from './available-dates/available-dates.component';
-import { LocationService } from './location-service';
-import { AppComponent, IntroDialog } from './app.component';
 import { AgmCoreModule } from '@agm/core';
-import { DateRangeComponent } from './date-range/date-range.component';
-import { FiltersComponent } from './filters/filters.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,8 +21,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DestinationTableComponent } from './destination-table/destination-table.component';
+
+import { AppComponent, IntroDialog } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AvailabilityService } from './availability.service';
+import { AvailableDatesComponent } from './available-dates/available-dates.component';
 import { AvailabilityDetailComponent } from './availability-detail/availability-detail.component';
+import { DateRangeComponent } from './date-range/date-range.component';
+import { DestinationTableComponent } from './destination-table/destination-table.component';
+import { FiltersComponent } from './filters/filters.component';
+import { LocationService } from './location-service';
+import { DestingationMapComponent } from './destingation-map/destingation-map.component';
+import { DatesComponent } from './dates/dates.component';
 
 
 @NgModule({
@@ -39,12 +44,15 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     FiltersComponent,
     DateRangeComponent,
     DestinationTableComponent,
-    AvailabilityDetailComponent
+    AvailabilityDetailComponent,
+    DestingationMapComponent,
+    DatesComponent
   ],
   entryComponents: [
     IntroDialog
   ],
   imports: [
+    AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBpgPv4Ksu7rb1o_N1zF4N2XaEJ_k-LwQM'
     }),
@@ -56,6 +64,7 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatCardModule,
     MatDialogModule,
     MatExpansionModule,
     MatFormFieldModule,
@@ -66,9 +75,9 @@ import { AvailabilityDetailComponent } from './availability-detail/availability-
     MatTableModule,
     MatToolbarModule,
     NgbModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [AppStateService, AvailabilityService, LocationService],
+  providers: [AvailabilityService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

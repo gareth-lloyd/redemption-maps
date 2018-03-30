@@ -1,54 +1,36 @@
-<div class="fullscreen">
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="styles">
-    <agm-marker *ngFor="let route of routeAvailabilitiesSubj | async"
-                [latitude]="route.route.destination.location.coordinates[1]"
-                [longitude]="route.route.destination.location.coordinates[0]"
-                (markerClick)="selectRoute(route)">
-      <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
-        <ng-template>
-          {{ route.route.origin.name }}
-          to
-          {{ route.route.destination.name }}
-        </ng-template>
-      </agm-snazzy-info-window>
-    </agm-marker>
-  </agm-map>
-</div>
-
 <div class="controls mat-elevation-z2">
-  <app-filters #filters (searchSubmit)="doSearch($event)">
-  </app-filters>
+  <ol class="controls__progress">
+    <li class="progress__step"
+        routerLinkActive="progress__step--active">
+        <a routerLink="filters">
+            Filters
+        </a>
+    </li>
+    <li class="progress__step"
+        routerLinkActive="progress__step--active">
+        <a routerLink="dates">
+            Dates
+        </a>
+    </li>
+    <li class="progress__step"
+        routerLinkActive="progress__step--active">
+        <a routerLink="dates">
+            Dates
+        </a>
+    </li>
+    <li class="progress__step"
+        routerLinkActive="progress__step--active">
+        <a routerLink="options">
+            Options
+        </a>
+    </li>
+    <li class="progress__step"
+        routerLinkActive="progress__step--active">
+        <a routerLink="details">
+            Details
+        </a>
+    </li>
+  </ol>
+  <router-outlet></router-outlet>
 
-  <mat-expansion-panel [expanded]="appState.state == 'select'"
-                       (opened)="appState.setState('select')">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>list</mat-icon>
-        Select Destination
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-
-    <mat-spinner *ngIf="loading">
-    </mat-spinner>
-
-    <div *ngIf="!loading">
-      <p><em></em></p>
-      <app-destination-table
-                             [dataObservable]="routeAvailabilitiesSubj"
-                             (routeSelected)="selectRoute($event)">
-      </app-destination-table>
-    </div>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel [expanded]="appState.state == 'view'"
-                       (opened)="appState.setState('view')">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>local_airport</mat-icon>
-        Finalise your trip
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <app-availability-detail [selectedRoute]="selectedRoute">
-    </app-availability-detail>
-  </mat-expansion-panel>
 </div>

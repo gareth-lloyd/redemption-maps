@@ -13,7 +13,7 @@ export class DestingationMapComponent implements OnInit {
 
 
   styles = LOW_CONTRAST;
-  constructor(availabilityService: AvailabilityService) { }
+  constructor(public availabilityService: AvailabilityService) { }
 
   ngOnInit() {
   }

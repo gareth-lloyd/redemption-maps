@@ -14,6 +14,7 @@
   pointer-events: none;
   opacity: .5;
 }
+
 .progress {
   display: flex;
   flex-direction: row;
@@ -28,6 +29,7 @@
     display: inline-block;
     background: white;
     text-align: center;
+    padding-bottom: 1rem;
     border-bottom: 3px solid white;
 
     &--active {
@@ -36,6 +38,7 @@
 
     &__link {
       color: #444;
+      text-decoration: none;
     }
   }
 }

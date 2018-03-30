@@ -16,6 +16,7 @@ export class  AvailableDatesComponent {
   private _possibleDays: PossibleDay[] = new Array<PossibleDay>();
   selectedDate: NgbDateStruct;
   minDate: NgbDateStruct;
+  @Input() months: number;
 
   @Output() selectionChange = new EventEmitter<NgbDateStruct>();
   @ViewChild('dp') datePicker: NgbDatepicker;

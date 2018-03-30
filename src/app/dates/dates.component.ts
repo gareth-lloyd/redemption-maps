@@ -23,7 +23,6 @@ export class DatesComponent {
     private availabilityService: AvailabilityService,
   ) {
     this.windowSizeService.layout.subscribe((layout: Layout) => {
-      console.log(layout);
       this.months = (layout == Layout.Mobile) ? 1 : 2;
     })
   }

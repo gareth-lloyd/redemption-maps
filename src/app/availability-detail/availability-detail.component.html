@@ -17,14 +17,13 @@
       <div class="finalise-date-selection">
         <p>Outbound available dates</p>
         <available-dates [possibleDays]="availabilityService.selectedRoute.availability"
-                         (selectionChange)="outboundSelected($event)">
+                         [months]="months" (selectionChange)="outboundSelected($event)">
         </available-dates>
       </div>
       <div class="finalise-date-selection" *ngIf="availabilityService.selectedRoute.inboundAvailability">
         <p>Inbound available dates</p>
         <available-dates [possibleDays]="availabilityService.selectedRoute.inboundAvailability"
-                         (selectionChange)="inboundSelected($event)">
-
+                         [months]="months" (selectionChange)="inboundSelected($event)">
         </available-dates>
       </div>
 

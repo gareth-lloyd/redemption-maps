@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouteAvailability } from '../route-availability';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
+import { AvailabilityService } from '../availability.service';
 
 
 function formatDateForDisplay(date: NgbDateStruct) : string {
@@ -13,9 +15,12 @@ function formatDateForDisplay(date: NgbDateStruct) : string {
   styleUrls: ['./availability-detail.component.scss']
 })
 export class AvailabilityDetailComponent {
-  @Input() selectedRoute: RouteAvailability;
   outboundDateStr: string;
   inboundDateStr: string;
+
+  constructor(
+    private availabilityService: AvailabilityService,
+  ) { }
 
   outboundSelected(date: NgbDateStruct) {
     this.outboundDateStr = formatDateForDisplay(date);

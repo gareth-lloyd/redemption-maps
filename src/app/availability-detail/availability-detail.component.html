@@ -1,29 +1,33 @@
-<div *ngIf="selectedRoute">
-  <h3>
-    {{ selectedRoute.route.origin.name }}
-    to
-    {{ selectedRoute.route.destination.name }}
-    <span *ngIf="outboundDateStr">
-      departing
-      {{ outboundDateStr }}
-    </span>
-    <span *ngIf="inboundDateStr">
-      returning
-      {{ inboundDateStr }}
-    </span>
-  </h3>
-  <div class="finalise-date-selection">
-    <p>Outbound available dates</p>
-    <available-dates [possibleDays]="selectedRoute.availability"
-                     (selectionChange)="outboundSelected($event)">
-    </available-dates>
-  </div>
-  <div class="finalise-date-selection" *ngIf="selectedRoute.inboundAvailability">
-    <p>Inbound available dates</p>
-    <available-dates [possibleDays]="selectedRoute.inboundAvailability"
-                     (selectionChange)="inboundSelected($event)">
+<mat-card class="mat-elevation-z0">
+  <mat-card-content>
+    <div *ngIf="availabilityService.selectedRoute">
+      <h3>
+        {{ availabilityService.selectedRoute.route.origin.name }}
+        to
+        {{ availabilityService.selectedRoute.route.destination.name }}
+        <span *ngIf="outboundDateStr">
+          departing
+          {{ outboundDateStr }}
+        </span>
+        <span *ngIf="inboundDateStr">
+          returning
+          {{ inboundDateStr }}
+        </span>
+      </h3>
+      <div class="finalise-date-selection">
+        <p>Outbound available dates</p>
+        <available-dates [possibleDays]="availabilityService.selectedRoute.availability"
+                         (selectionChange)="outboundSelected($event)">
+        </available-dates>
+      </div>
+      <div class="finalise-date-selection" *ngIf="availabilityService.selectedRoute.inboundAvailability">
+        <p>Inbound available dates</p>
+        <available-dates [possibleDays]="availabilityService.selectedRoute.inboundAvailability"
+                         (selectionChange)="inboundSelected($event)">
 
-    </available-dates>
-  </div>
+        </available-dates>
+      </div>
 
-</div>
+    </div>
+  </mat-card-content>
+</mat-card>

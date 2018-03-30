@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -34,6 +35,7 @@ import { FiltersComponent } from './filters/filters.component';
 import { LocationService } from './location-service';
 import { DestingationMapComponent } from './destingation-map/destingation-map.component';
 import { DatesComponent } from './dates/dates.component';
+import { WindowSizeService } from './window-size.service';
 
 
 @NgModule({
@@ -73,11 +75,12 @@ import { DatesComponent } from './dates/dates.component';
     MatProgressSpinnerModule,
     MatSelectModule,
     MatTableModule,
+    MatTabsModule,
     MatToolbarModule,
     NgbModule.forRoot(),
     ReactiveFormsModule,
   ],
-  providers: [AvailabilityService, LocationService],
+  providers: [AvailabilityService, LocationService, WindowSizeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

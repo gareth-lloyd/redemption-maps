@@ -31,18 +31,21 @@ export class AvailabilityService {
     this.search.cabin = inputs.cabin;
     this.search.numPassengers = inputs.numPassengers;
   }
+
   setInboundDates(start: NgbDateStruct, end?: NgbDateStruct) {
     this.search.inboundStart = start;
     this.search.inboundEnd = end;
   }
+
   setOutboundDates(start: NgbDateStruct, end?: NgbDateStruct) {
     this.search.outboundStart = start;
     this.search.outboundEnd = end;
   }
-  doSearch(search) {
+
+  doSearch() {
     this.routeAvailabilitiesSubj.next([]);
     this.selectedRoute = null;
-    this.getAvailability(search)
+    this.getAvailability(this.search)
       .subscribe(routeAvailabilities => {
         this.routeAvailabilitiesSubj.next(routeAvailabilities);
       });

@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Component, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material';
 
 import { RouteAvailability } from '../route-availability';
+import { AvailabilityService } from '../availability.service';
 
 @Component({
   selector: 'app-destination-table',
@@ -11,14 +11,15 @@ import { RouteAvailability } from '../route-availability';
   styleUrls: ['./destination-table.component.scss']
 })
 export class DestinationTableComponent {
-  @Input() dataObservable: BehaviorSubject<RouteAvailability[]>;
-  @Output() routeSelected: EventEmitter<RouteAvailability> = new EventEmitter();
   dataSource : MatTableDataSource<RouteAvailability> = new MatTableDataSource([]);
 
   displayedColumns = ['name', 'days', 'inboundDays', 'select'];
 
-  ngOnInit() {
-    this.dataObservable
+  constructor(
+    private availabilityService: AvailabilityService,
+    private router: Router
+  ) {
+    this.availabilityService.routeAvailabilitiesSubj
       .subscribe(routeAvailabilities => this.dataSource.data = routeAvailabilities)
   }
 
@@ -29,6 +30,7 @@ export class DestinationTableComponent {
   }
 
   selectRoute(route: RouteAvailability) {
-    this.routeSelected.emit(route);
+    this.availabilityService.selectRoute(route);
+    this.router.navigate(['details']);
   }
 }

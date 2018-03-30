@@ -1,36 +1,39 @@
-<div class="controls mat-elevation-z2">
-  <ol class="controls__progress">
+<div class="main mat-elevation-z2">
+
+  <ol class="progress">
     <li class="progress__step"
         routerLinkActive="progress__step--active">
-        <a routerLink="filters">
-            Filters
+        <a class="progress__step__link" routerLink="filters">
+          <mat-icon>input</mat-icon><br>
+          Options
         </a>
     </li>
     <li class="progress__step"
         routerLinkActive="progress__step--active">
-        <a routerLink="dates">
-            Dates
-        </a>
+      <a [class.linkDisabled]="!canGoDates()" class="progress__step__link"
+         routerLink="dates">
+        <mat-icon>date_range</mat-icon><br>
+        Dates
+      </a>
     </li>
     <li class="progress__step"
         routerLinkActive="progress__step--active">
-        <a routerLink="dates">
-            Dates
-        </a>
+      <a [class.linkDisabled]="!canGoOptions()" class="progress__step__link"
+         routerLink="options">
+        <mat-icon>list</mat-icon><br>
+        Destinations
+      </a>
     </li>
     <li class="progress__step"
         routerLinkActive="progress__step--active">
-        <a routerLink="options">
-            Options
-        </a>
-    </li>
-    <li class="progress__step"
-        routerLinkActive="progress__step--active">
-        <a routerLink="details">
-            Details
-        </a>
+      <a [class.linkDisabled]="!canGoDetail()" class="progress__step__link"
+         routerLink="details">
+        <mat-icon>flight_takeoff</mat-icon><br>
+        Choose
+      </a>
     </li>
   </ol>
+
   <router-outlet></router-outlet>
 
 </div>

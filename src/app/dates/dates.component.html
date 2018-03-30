@@ -1,19 +1,17 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-icon>flight_takeoff</mat-icon>
-    <mat-card-title>Dates</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
+<mat-card class="mat-elevation-z0">
+  <mat-card-content class="dates">
     <p><em>You can click twice to select a range</em></p>
-    <date-range (dateRangeChange)='outboundDateRangeChanged($event)'>
+    <date-range (dateRangeChange)='outboundDateRangeChanged($event)'
+                [months]="months">
     </date-range>
 
-    <date-range #inboundDateRange (dateRangeChange)='inboundDateRangeChanged($event)'>
+    <date-range #inboundDateRange (dateRangeChange)='inboundDateRangeChanged($event)'
+                [months]="months">
     </date-range>
   </mat-card-content>
 
   <mat-card-actions>
-    <button (click)="submit()" mat-button>
+    <button (click)="submit()" mat-raised-button color="primary">
       <span *ngIf="!inboundSelected">One-way only</span>
       <span *ngIf="inboundSelected">Next</span>
     </button>

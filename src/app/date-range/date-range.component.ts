@@ -19,6 +19,7 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
 })
 export class  DateRangeComponent {
 
+  @Input() months: number;
   @Output() dateRangeChange = new EventEmitter<NgbDateStruct[]>();
 
   minDate: NgbDateStruct;

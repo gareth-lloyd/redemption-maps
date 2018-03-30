@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 import { AvailabilityService } from '../availability.service';
+import { WindowSizeService, Layout } from '../window-size.service';
 import { DateRangeComponent } from '../date-range/date-range.component';
 
 @Component({
@@ -13,10 +15,18 @@ export class DatesComponent {
   @ViewChild('inboundDateRange') inboundDateRange: DateRangeComponent;
   outboundSelected: boolean = false;
   inboundSelected: boolean = false;
+  months: number = 2;
 
   constructor(
+    private router: Router,
+    private windowSizeService: WindowSizeService,
     private availabilityService: AvailabilityService,
-  ) { }
+  ) {
+    this.windowSizeService.layout.subscribe((layout: Layout) => {
+      console.log(layout);
+      this.months = (layout == Layout.Mobile) ? 1 : 2;
+    })
+  }
 
   outboundDateRangeChanged(dateRange: NgbDateStruct[]) {
     this.availabilityService.setOutboundDates(
@@ -34,6 +44,7 @@ export class DatesComponent {
   }
 
   submit() {
-
+    this.availabilityService.doSearch();
+    this.router.navigate(['options']);
   }
 }

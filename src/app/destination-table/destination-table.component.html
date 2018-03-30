@@ -1,33 +1,38 @@
-<div class="destination-table-container">
-  <div *ngIf="this.dataSource.data.length === 0">
-    No Availability found
-  </div>
+<mat-card class="mat-elevation-z0">
+  <mat-card-content>
+    <div class="destination-table-container">
+      <div *ngIf="this.dataSource.data.length === 0">
+        No Availability found
+      </div>
 
-  <mat-table #table [dataSource]="dataSource">
+      <mat-table #table [dataSource]="dataSource">
 
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
-      <mat-cell *matCellDef="let route"> {{ route.route.destination.name }} </mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+          <mat-cell *matCellDef="let route"> {{ route.route.destination.name }} </mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="days">
-      <mat-header-cell *matHeaderCellDef style="text-align: right">Outbound options</mat-header-cell>
-      <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.availableDays() }} </mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="days">
+          <mat-header-cell *matHeaderCellDef style="text-align: right">Outbound options</mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.availableDays() }} </mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="inboundDays">
-      <mat-header-cell *matHeaderCellDef style="text-align: right">Inbound options</mat-header-cell>
-      <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.availableInboundDays() }} </mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="inboundDays">
+          <mat-header-cell *matHeaderCellDef style="text-align: right">Inbound options</mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.availableInboundDays() }} </mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="select">
-      <mat-header-cell *matHeaderCellDef style="text-align: right"> Select </mat-header-cell>
-      <mat-cell *matCellDef="let route" style="text-align: right">
-        <button color="primary" (click)="selectRoute(route)">Select</button>
-      </mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="select">
+          <mat-header-cell *matHeaderCellDef style="text-align: right"> Select </mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right">
+            <button color="primary" (click)="selectRoute(route)">Select</button>
+          </mat-cell>
+        </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</div>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+
+  </mat-card-content>
+</mat-card>

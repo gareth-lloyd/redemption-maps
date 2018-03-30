@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
@@ -25,6 +26,7 @@ export class FiltersComponent {
     private availabilityService: AvailabilityService,
     private locationService: LocationService,
     private formBuilder: FormBuilder,
+    private router: Router
   ) {
       this.form = this.formBuilder.group({
         originCode: [
@@ -66,6 +68,7 @@ export class FiltersComponent {
 
   submit() {
     this.availabilityService.setFilters(this.form.value);
+    this.router.navigate(['dates']);
   }
 
 }

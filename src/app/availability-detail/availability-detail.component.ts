@@ -21,7 +21,7 @@ export class AvailabilityDetailComponent {
   months: number;
 
   constructor(
-    private availabilityService: AvailabilityService,
+    availabilityService: AvailabilityService,
     private windowSizeService: WindowSizeService,
   ) {
     this.months = 1;

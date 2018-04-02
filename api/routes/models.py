@@ -39,6 +39,20 @@ class Route(models.Model):
         Location, related_name='inbound_routes', on_delete=models.PROTECT
     )
     airline = models.ForeignKey(Airline, on_delete=models.PROTECT)
+    distance_miles = models.IntegerField(blank=True, null=True)
+
+    def _miles_cost(self, is_peak):
+        from routes.api import miles_costs
+        return miles_costs(self)[1 if is_peak else 0]
+
+    @property
+    def miles_cost(self):
+        return self._miles_cost(False)
+
+    @property
+    def miles_cost_peak(self):
+        return self._miles_cost(True)
+
 
     class Meta:
         unique_together = ('origin', 'destination', 'airline')
@@ -55,8 +69,9 @@ class RouteAvailability(models.Model):
         Route, on_delete=models.PROTECT, related_name='availability'
     )
     day = models.DateField()
-    miles_cost = models.IntegerField(blank=True, null=True)
+    is_peak = models.BooleanField(default=False)
     cabin = models.CharField(max_length=16)
+    miles_cost = models.IntegerField(blank=True, null=True)
 
     # You can't ask the API "how many seats are available?"
     # but instead "Are there three seats available, yes or no?"
@@ -87,3 +102,8 @@ class RouteAvailability(models.Model):
             self.route, self.day, self.cabin,
             'available' if self.some_availability else 'unavailable'
         )
+
+
+class PeakDay(models.Model):
+    is_peak = models.BooleanField()
+    day = models.DateField()

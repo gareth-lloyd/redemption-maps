@@ -53,6 +53,7 @@
     "tslint": "~5.7.0"
   },
   "scripts": {
-    "postinstall": "ng build --aot -prod --output-hashing=none"
+    "postinstall": "ng build --aot -prod --output-hashing=none",
+    "devbuild": "ng build --aot -prod --watch --output-hashing=none -op=dev-dist"
   }
 }

@@ -10,6 +10,7 @@ django-filter==1.1.0
 djangorestframework==3.7.7
 djangorestframework-gis==0.12
 djangorestframework-serializer-extensions==0.5.3
+geopy
 gunicorn==19.7.1
 hashids==1.2.0
 idna==2.6

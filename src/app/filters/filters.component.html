@@ -1,7 +1,9 @@
 <form *ngIf="form" [formGroup]="form">
   <mat-card class="mat-elevation-z0">
     <mat-card-content>
-
+      <p>
+        Where will you start your trip?
+      </p>
       <mat-form-field class="full-width">
         <input matInput placeholder="Origin" required
                formControlName="originCode" [matAutocomplete]="auto">
@@ -10,26 +12,21 @@
 
       <mat-autocomplete #auto="matAutocomplete">
          <mat-option *ngFor="let location of filteredLocations | async" [value]="location.code">
-            {{ location.name }}
+          {{ location.name }}
          </mat-option>
       </mat-autocomplete>
 
-      <mat-form-field class="full-width">
-        <mat-select placeholder="Cabin" formControlName="cabin" required>
-          <mat-option *ngFor="let cabin of availabilityService.search.cabinKeys" [value]="cabin">
-            {{ availabilityService.search.cabins[cabin] }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="form-control mat-form-field-wrapper">
+        <touch-select formControlName="cabin" label="Class of travel"
+                   [options]="cabinOptions" showLimit="4" required>
+        </touch-select>
+      </div>
 
-      <mat-form-field class="full-width">
-        <mat-select placeholder="Number of Passengers"
-                    formControlName="numPassengers" required>
-          <mat-option *ngFor="let n of availabilityService.search.numPassengersOptions" [value]="n">
-            {{ n }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="form-control mat-form-field-wrapper">
+        <touch-select formControlName="numPassengers" label="Number of Passengers"
+                   [options]="numPassengersOptions" showLimit="4" required>
+        </touch-select>
+      </div>
 
     </mat-card-content>
 

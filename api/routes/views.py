@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django_filters import rest_framework
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView, TemplateView
 from rest_framework.generics import ListAPIView
 
 from routes import (
@@ -11,6 +11,10 @@ from routes import (
 
 class Home(TemplateView):
     template_name = 'routes/home.html'
+
+
+class RedirectToApp(RedirectView):
+    pattern_name = 'home'
 
 
 class AvailableRoutes(ListAPIView):

@@ -10,6 +10,7 @@ import { AvailabilityService } from '../availability.service';
 import { Location } from '../location';
 import { LocationService } from '../location-service';
 import { Search } from '../search';
+import { SelectOption } from '../touch-select/touch-select.component';
 
 
 @Component({
@@ -21,6 +22,8 @@ export class FiltersComponent {
   form: FormGroup;
   originCtrl: AbstractControl;
   filteredLocations: Observable<Location[]>;
+  cabinOptions: SelectOption[];
+  numPassengersOptions: SelectOption[];
 
   constructor(
     private availabilityService: AvailabilityService,
@@ -42,7 +45,14 @@ export class FiltersComponent {
           Validators.required
         ],
       })
-      this.originCtrl = this.form.get('originCode')
+      this.originCtrl = this.form.get('originCode');
+
+      this.cabinOptions = Object.keys(this.availabilityService.search.cabins).map((key) => {
+        return { value: key, label: availabilityService.search.cabins[key] };
+      })
+      this.numPassengersOptions = [1, 2, 3, 4].map((x) => {
+        return {value: x, label: x.toString() };
+      });
   }
 
   ngOnInit() {

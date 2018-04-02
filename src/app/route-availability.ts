@@ -21,6 +21,9 @@ export class Route {
 export class RouteAvailability {
   public destination_code;
   public origin_code;
+  public distanceMiles;
+  public milesCost;
+  public isPeak;
   public route : Route;
   public availability: PossibleDay[];
   public inboundAvailability: PossibleDay[];
@@ -30,6 +33,9 @@ export class RouteAvailability {
   }
 
   availableInboundDays(): number {
+    if (!this.inboundAvailability) {
+      return undefined;
+    }
     return this.inboundAvailability.filter(a => a.available).length;
   }
 
@@ -42,6 +48,10 @@ export class RouteAvailability {
     if (json.inbound_availability) {
       this.inboundAvailability = json.inbound_availability.map(a => new PossibleDay().fromJSON(a));
     }
+    this.distanceMiles = json.distance_miles;
+    this.isPeak = json.is_peak;
+    this.milesCost = json.miles_cost;
+    this.milesCostPeak = json.miles_cost_peak;
     return this;
   }
 }

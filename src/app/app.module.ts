@@ -29,12 +29,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AvailabilityService } from './availability.service';
 import { AvailableDatesComponent } from './available-dates/available-dates.component';
 import { AvailabilityDetailComponent } from './availability-detail/availability-detail.component';
+import { DatesComponent } from './dates/dates.component';
 import { DateRangeComponent } from './date-range/date-range.component';
+import { DestingationMapComponent } from './destingation-map/destingation-map.component';
 import { DestinationTableComponent } from './destination-table/destination-table.component';
 import { FiltersComponent } from './filters/filters.component';
 import { LocationService } from './location-service';
-import { DestingationMapComponent } from './destingation-map/destingation-map.component';
-import { DatesComponent } from './dates/dates.component';
+import { TouchSelectComponent } from './touch-select/touch-select.component';
 import { WindowSizeService } from './window-size.service';
 
 
@@ -48,7 +49,8 @@ import { WindowSizeService } from './window-size.service';
     DestinationTableComponent,
     AvailabilityDetailComponent,
     DestingationMapComponent,
-    DatesComponent
+    DatesComponent,
+    TouchSelectComponent,
   ],
   entryComponents: [
     IntroDialog

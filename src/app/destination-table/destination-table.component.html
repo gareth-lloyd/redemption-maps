@@ -12,14 +12,19 @@
           <mat-cell *matCellDef="let route"> {{ route.route.destination.name }} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="days">
-          <mat-header-cell *matHeaderCellDef style="text-align: right">Outbound options</mat-header-cell>
-          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.availableDays() }} </mat-cell>
+        <ng-container matColumnDef="distanceMiles">
+          <mat-header-cell *matHeaderCellDef style="text-align: right">Distance (miles)</mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.distanceMiles|number }} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="inboundDays">
-          <mat-header-cell *matHeaderCellDef style="text-align: right">Inbound options</mat-header-cell>
-          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.availableInboundDays() }} </mat-cell>
+        <ng-container matColumnDef="milesCostPeak">
+          <mat-header-cell *matHeaderCellDef style="text-align: right">Avios</mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.milesCostPeak|number }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="milesCost">
+          <mat-header-cell *matHeaderCellDef style="text-align: right">Avios (off-peak)</mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.milesCost|number }} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="select">

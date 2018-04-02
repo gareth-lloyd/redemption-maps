@@ -1,6 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
+
 import { AvailabilityService } from './availability.service';
+import { environment } from '../environments/environment';
 
 
 @Component({
@@ -16,17 +18,21 @@ export class AppComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    //let dialogRef = this.dialog.open(IntroDialog, {width: '500px'});
+    if (environment.production) {
+      let dialogRef = this.dialog.open(IntroDialog, {width: '500px'});
 
-    //dialogRef.afterClosed().subscribe(result => {
-    //});
+      dialogRef.afterClosed().subscribe(result => { });
+    }
   }
+
   canGoDates(): boolean {
     return !!this.availabilityService.search.cabin;
   }
+
   canGoOptions(): boolean {
     return !!this.availabilityService.search.inboundStart;
   }
+  
   canGoDetail(): boolean {
     return !!this.availabilityService.selectedRoute;
   }

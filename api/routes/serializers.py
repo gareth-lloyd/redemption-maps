@@ -4,11 +4,15 @@ from routes import models as routes_models
 
 
 class RouteAvailabilitySerializer(serializers.ModelSerializer):
+    distance_miles = serializers.IntegerField(
+        source='route.distance_miles'
+    )
     class Meta:
         model = routes_models.RouteAvailability
         fields = (
             'day',
             'miles_cost',
+            'is_peak',
             'cabin',
         )
 
@@ -34,6 +38,7 @@ class RouteSerializer(serializers.ModelSerializer):
         fields = (
             'origin',
             'destination',
+            'distance_miles',
         )
 
 
@@ -45,6 +50,9 @@ class AvailabilityDaySerializer(serializers.Serializer):
 class CombinedRouteAvailabilitySerializer(serializers.Serializer):
     origin_code = serializers.CharField()
     destination_code = serializers.CharField()
+    distance_miles = serializers.IntegerField(source='route.distance_miles')
+    miles_cost = serializers.IntegerField()
+    miles_cost_peak = serializers.IntegerField()
     availability = AvailabilityDaySerializer(many=True)
     inbound_availability = AvailabilityDaySerializer(many=True)
 
@@ -58,3 +66,4 @@ class SearchParamsSerializer(serializers.Serializer):
     outbound_end = serializers.DateField()
     inbound_start = serializers.DateField(required=False)
     inbound_end = serializers.DateField(required=False)
+    avios = serializers.IntegerField(required=False)

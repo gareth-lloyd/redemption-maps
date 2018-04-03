@@ -18,10 +18,12 @@ def find_route_availabilities(
     origin_code, cabin, n_passengers, outbound_start, outbound_end,
     inbound_start=None, inbound_end=None, avios=None
 ):
-    one_way_avios = avios / 2 if avios is not None else None
+    one_leg_avios = avios / n_passengers if avios else None
+    if (one_leg_avios is not None) and inbound_start:
+        one_leg_avios = one_leg_avios / 2
     outbound_by_route = routes_with_availability(
         [origin_code], cabin, outbound_start, outbound_end, n_passengers,
-        avios=one_way_avios
+        avios=one_leg_avios
     )
 
     route_availabilities_by_destination = {
@@ -37,7 +39,7 @@ def find_route_availabilities(
         route_codes = [r.destination.code for r in outbound_by_route.keys()]
         inbound_by_route = routes_with_availability(
             route_codes, cabin, inbound_start, inbound_end, n_passengers,
-            destination_code=origin_code, avios=one_way_avios,
+            destination_code=origin_code, avios=one_leg_avios,
         )
         available_destinations = set()
         for inbound_route, availability in inbound_by_route.items():

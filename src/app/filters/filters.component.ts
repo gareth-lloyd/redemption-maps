@@ -44,6 +44,10 @@ export class FiltersComponent {
           this.availabilityService.search.numPassengers || 2,
           Validators.required
         ],
+        avios: [
+          undefined,
+          Validators.pattern('\\d+')
+        ],
       })
       this.originCtrl = this.form.get('originCode');
 

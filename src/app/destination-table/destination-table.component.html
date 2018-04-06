@@ -5,32 +5,41 @@
         No Availability found
       </div>
 
-      <mat-table #table [dataSource]="dataSource">
+      <mat-table #table [dataSource]="dataSource" matSort>
 
         <ng-container matColumnDef="name">
-          <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
           <mat-cell *matCellDef="let route"> {{ route.route.destination.name }} </mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="region">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Region</mat-header-cell>
+          <mat-cell *matCellDef="let route"> {{ route.route.destination.region }} </mat-cell>
+        </ng-container>
+
         <ng-container matColumnDef="distanceMiles">
-          <mat-header-cell *matHeaderCellDef style="text-align: right">Distance (miles)</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right">Distance (miles)</mat-header-cell>
           <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.distanceMiles|number }} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="milesCostPeak">
-          <mat-header-cell *matHeaderCellDef style="text-align: right">Avios</mat-header-cell>
-          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.milesCostPeak|number }} </mat-cell>
+        <ng-container matColumnDef="milesCost">
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right">
+            Avios<br>(off-peak)
+          </mat-header-cell>
+          <mat-cell *matCellDef="let route" style="text-align: right">
+            {{ route.milesCostPeak|number }}<br>
+            ({{ route.milesCost|number }})
+          </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="milesCost">
-          <mat-header-cell *matHeaderCellDef style="text-align: right">Avios (off-peak)</mat-header-cell>
-          <mat-cell *matCellDef="let route" style="text-align: right"> {{ route.milesCost|number }} </mat-cell>
-        </ng-container>
 
         <ng-container matColumnDef="select">
           <mat-header-cell *matHeaderCellDef style="text-align: right"> Select </mat-header-cell>
           <mat-cell *matCellDef="let route" style="text-align: right">
-            <button color="primary" (click)="selectRoute(route)">Select</button>
+            <button color="primary" class="mat-elevation-z1"
+                    mat-mini-fab (click)="selectRoute(route)">
+              <mat-icon>flight_takeoff</mat-icon>
+            </button>
           </mat-cell>
         </ng-container>
 

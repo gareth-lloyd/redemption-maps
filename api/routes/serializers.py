@@ -17,7 +17,10 @@ class RouteAvailabilitySerializer(serializers.ModelSerializer):
         )
 
 
-class LocationSerializer(serializers.ModelSerializer):
+class CitySerializer(serializers.ModelSerializer):
+
+    region = serializers.SerializerMethodField()
+
     class Meta:
         model = routes_models.Location
         fields = (
@@ -26,12 +29,16 @@ class LocationSerializer(serializers.ModelSerializer):
             'type',
             'location',
             'is_origin',
+            'region',
         )
+
+    def get_region(self, obj):
+        return obj.parent.parent.name
 
 
 class RouteSerializer(serializers.ModelSerializer):
-    origin = LocationSerializer()
-    destination = LocationSerializer()
+    origin = CitySerializer()
+    destination = CitySerializer()
 
     class Meta:
         model = routes_models.Route

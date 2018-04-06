@@ -13,7 +13,7 @@ import { AvailabilityService } from '../availability.service';
 export class DestinationTableComponent {
   dataSource : MatTableDataSource<RouteAvailability> = new MatTableDataSource([]);
 
-  displayedColumns = ['name', 'distanceMiles', 'milesCostPeak', 'milesCost', 'select'];
+  displayedColumns = ['name', 'region', 'distanceMiles', 'milesCost', 'select'];
 
   constructor(
     private availabilityService: AvailabilityService,

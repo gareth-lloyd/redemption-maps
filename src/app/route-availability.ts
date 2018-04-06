@@ -23,6 +23,7 @@ export class RouteAvailability {
   public origin_code;
   public distanceMiles;
   public milesCost;
+  public milesCostPeak;
   public isPeak;
   public route : Route;
   public availability: PossibleDay[];
@@ -30,6 +31,10 @@ export class RouteAvailability {
 
   availableDays(): number {
     return this.availability.filter(a => a.available).length;
+  }
+
+  public get region() {
+    return this.route.destination.region;
   }
 
   availableInboundDays(): number {

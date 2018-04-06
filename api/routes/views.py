@@ -33,9 +33,10 @@ class AvailableRoutes(ListAPIView):
 
 
 class LocationsCities(ListAPIView):
-    serializer_class = routes_serializers.LocationSerializer
+    serializer_class = routes_serializers.CitySerializer
     queryset = (
         routes_models.Location.objects.filter(
             type=routes_models.Location.CITY
         )
+        .select_related('parent')
     )

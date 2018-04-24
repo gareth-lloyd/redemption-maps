@@ -9,12 +9,12 @@
 
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
-          <mat-cell *matCellDef="let route"> {{ route.route.destination.name }} </mat-cell>
+          <mat-cell *matCellDef="let route">{{ route.route.destination.name }}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="region">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Region</mat-header-cell>
-          <mat-cell *matCellDef="let route"> {{ route.route.destination.region }} </mat-cell>
+          <mat-cell *matCellDef="let route">{{ route.route.destination.region }}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="distanceMiles">
@@ -23,8 +23,10 @@
         </ng-container>
 
         <ng-container matColumnDef="milesCost">
-          <mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right">
-            Avios<br>(off-peak)
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            <span style="text-align: right">
+              Avios (off-peak)
+            </span>
           </mat-header-cell>
           <mat-cell *matCellDef="let route" style="text-align: right">
             {{ route.milesCostPeak|number }}<br>

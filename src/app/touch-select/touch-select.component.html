@@ -1,30 +1,32 @@
-<label class="touch-select__label">
-    {{ label }}<span *ngIf="required">*</span>
-</label>
+<div class="touch-select">
+  <label class="touch-select__label">
+  {{ label }}<span *ngIf="required"> *</span>
+  </label>
 
-<p *ngIf="help" class="touch-select__help">{{ help }}</p>
+  <p *ngIf="help" class="touch-select__help">{{ help }}</p>
 
-<div *ngIf="options" class="touch-select__options"
+  <div *ngIf="options" class="touch-select__options"
     [class.touch-select__options--disabled]="isDisabled">
     <label *ngFor="let option of visibleOptions" class="touch-option touch-select__option"
-        [ngSwitch]="multiple"
-        [class.touch-option--selected]="isSelected(option)"
-        [class.touch-option--focussed]="isFocussed(option)">
-        <input *ngSwitchCase="true" class="touch-select__input"
-            type="checkbox" [attr.name]="name" [value]="option.value"
-            [disabled]="this.isDisabled"
-            [checked]="isSelected(option)"
-            (change)="onChangeMultiple(option.value, $event.target.checked)"
-            (focus)="onFocus(option)" (blur)="onBlur()">
-        <input *ngSwitchCase="false" class="touch-select__input"
-            type="radio" [attr.name]="name" [value]="option.value"
-            [disabled]="this.isDisabled" [(ngModel)]="value"
-            (focus)="onFocus(option)" (blur)="onBlur()">
-            {{ option.label }}
+      [ngSwitch]="multiple"
+      [class.touch-option--selected]="isSelected(option)"
+      [class.touch-option--focussed]="isFocussed(option)">
+      <input *ngSwitchCase="true" class="touch-select__input"
+        type="checkbox" [attr.name]="name" [value]="option.value"
+        [disabled]="this.isDisabled"
+        [checked]="isSelected(option)"
+        (change)="onChangeMultiple(option.value, $event.target.checked)"
+        (focus)="onFocus(option)" (blur)="onBlur()">
+      <input *ngSwitchCase="false" class="touch-select__input"
+        type="radio" [attr.name]="name" [value]="option.value"
+        [disabled]="this.isDisabled" [(ngModel)]="value"
+        (focus)="onFocus(option)" (blur)="onBlur()">
+        {{ option.label }}
     </label>
     <a *ngIf="moreOptions.length && !showingAllOptions"
-        (click)="showAllOptions()"
-        class="touch-option touch-option--more touch-select__option touch-select__option--more">
-        More
+      (click)="showAllOptions()"
+      class="touch-option touch-option--more touch-select__option touch-select__option--more">
+      More
     </a>
+  </div>
 </div>

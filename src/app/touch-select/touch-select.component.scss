@@ -1,115 +1,79 @@
 $color-dark: #555;
 $color-primary: #000099;
 $color-primary-dark: #000066;
-:host {
-    display: block;
-}
-
-.form-control--error {
-    :host {
-        color: red;
-    }
-}
-
-.touch-select__options { // Options container
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin-left: -0.5em;
-    margin-right: -0.5em;
-}
-
-.touch-select__option { // Options item (selectable)
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: calc(50% - 2rem - 10px);
-    text-align: center;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-
-    @media screen and (min-width: 700px) {
-        flex-grow: 1;
-        flex-basis: calc(25% - 2rem - 10px);
-
-        // Prevents Every 5th item (usually the last) from being full width above mobile
-        // But allows for 3-up and 2-up auto configurations
-        &:nth-child(5n) {
-            max-width: calc(25% - 2rem - 10px);
-        }
-    }
-}
-
-.touch-select__option--more {
-
-}
-.touch-option {
-    // display: inline-block;
-    // margin-right: 0.5rem;
-    // margin-bottom: 0.5rem;
-    // padding: 1rem;
-    color: $color-dark;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid rgba($color-dark, 0.8);
-    cursor: pointer;
-    user-select: none;
-    // transition: box-shadow 0.15s ease-in-out;
-    padding: 30px 12px;
-    &:hover {
-        border-color: $color-primary;
-        background-color: rgba($color-primary, 0.1);
-    }
-    &--focussed {
-        background-color: rgba($color-dark, 0.1);
-        // box-shadow: 0 0 1rem 0 rgba($color-dark, 0.4);
-    }
-    &--selected {
-        background-color: $color-primary;
-        border-color: $color-primary;
-        color: white;
-        &.hk-option--focussed {
-            // box-shadow: 0 0 1rem 0 rgba($color-primary-dark, 0.4)
-        }
-        &:hover {
-            background-color: $color-primary;
-        }
-    }
-    &--more {
-        border-style: dashed;
-    }
-}
-
-
 .touch-select {
-    &__label {
-        display: block;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-weight: 700;
+  margin-top: 1.5rem;
+  &__label {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0.8;
+  }
+  &__help {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  &__options {
+    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    grid-auto-rows: 1fr;
+    @media screen and (min-width: 600px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    &__help {
-        margin-top: 0.5rem;
-        margin-bottom: 0;
+
+    &--disabled {
+      opacity: 0.5;
+      * {
+        cursor: default;
+      }
     }
-    &__options {
-        margin-top: 0.75rem;
-        &--disabled {
-            opacity: 0.5;
-            * {
-                cursor: default;
-            }
-        }
+  }
+  &__input {
+    opacity: 0;
+    position: relative;
+    text-align: center;
+    width: 0
+  }
+  &__action-more {
+    font-style: italic;
+    border-style: dashed;
+  }
+}
+
+.touch-option {
+  display: flex;
+  align-items: center;
+
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba($color-dark, 0.6);
+  border-radius: 3px;
+  padding: 1rem;
+
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    border-color: $color-primary;
+    background-color: rgba($color-primary, 0.1);
+  }
+  &--focussed {
+    background-color: rgba($color-dark, 0.1);
+    // box-shadow: 0 0 1rem 0 rgba($color-dark, 0.4);
+  }
+  &--selected {
+    background-color: rgba($color-primary, 0.6);
+    border-color: $color-primary;
+    color: white;
+    &.hk-option--focussed {
+      // box-shadow: 0 0 1rem 0 rgba($color-primary-dark, 0.4)
     }
-    &__input {
-        opacity: 0;
-        margin: auto;
-        position: relative;
-        text-align: center;
-        margin-left: -20px;
+    &:hover {
+      background-color: rgba($color-primary, 0.65);
     }
-    &__action-more {
-        font-style: italic;
-        border-style: dashed;
-    }
+  }
+  &--more {
+    border-style: dashed;
+  }
 }

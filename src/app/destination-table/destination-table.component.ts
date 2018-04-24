@@ -1,6 +1,6 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 import { RouteAvailability } from '../route-availability';
 import { AvailabilityService } from '../availability.service';
@@ -13,6 +13,8 @@ import { AvailabilityService } from '../availability.service';
 export class DestinationTableComponent {
   dataSource : MatTableDataSource<RouteAvailability> = new MatTableDataSource([]);
 
+  @ViewChild(MatSort) sort: MatSort;
+
   displayedColumns = ['name', 'region', 'distanceMiles', 'milesCost', 'select'];
 
   constructor(
@@ -21,6 +23,10 @@ export class DestinationTableComponent {
   ) {
     this.availabilityService.routeAvailabilitiesSubj
       .subscribe(routeAvailabilities => this.dataSource.data = routeAvailabilities)
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(filterValue: string) {

@@ -4,8 +4,8 @@
     <li class="progress__step"
         routerLinkActive="progress__step--active">
         <a class="progress__step__link" routerLink="filters">
-          <mat-icon>input</mat-icon><br>
-          Options
+          <mat-icon>mode_edit</mat-icon><br>
+          1. Options
         </a>
     </li>
     <li class="progress__step"
@@ -13,7 +13,7 @@
       <a [class.linkDisabled]="!canGoDates()" class="progress__step__link"
          routerLink="dates">
         <mat-icon>date_range</mat-icon><br>
-        Dates
+        2. Dates
       </a>
     </li>
     <li class="progress__step"
@@ -21,7 +21,7 @@
       <a [class.linkDisabled]="!canGoOptions()" class="progress__step__link"
          routerLink="options">
         <mat-icon>list</mat-icon><br>
-        Destinations
+        3. Possibilities
       </a>
     </li>
     <li class="progress__step"
@@ -29,7 +29,7 @@
       <a [class.linkDisabled]="!canGoDetail()" class="progress__step__link"
          routerLink="details">
         <mat-icon>flight_takeoff</mat-icon><br>
-        Choose
+        4. Finalise
       </a>
     </li>
   </ol>

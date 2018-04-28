@@ -1,17 +1,24 @@
 <mat-card class="mat-elevation-z0">
   <mat-card-content class="dates">
-    <p><em>You can click twice to select a range</em></p>
+    <p>
+      When do you want to fly out?
+      Click twice to select a range.
+    </p>
     <date-range (dateRangeChange)='outboundDateRangeChanged($event)'
                 [months]="months">
     </date-range>
 
+    <p class="input__label">
+      When do you want to return (optional)?
+    </p>
     <date-range #inboundDateRange (dateRangeChange)='inboundDateRangeChanged($event)'
                 [months]="months">
     </date-range>
   </mat-card-content>
 
   <mat-card-actions>
-    <button (click)="submit()" mat-raised-button color="primary">
+    <button (click)="submit()" mat-raised-button color="primary"
+            [disabled]="!outboundSelected">
       <span *ngIf="!inboundSelected">One-way only</span>
       <span *ngIf="inboundSelected">Next</span>
     </button>

@@ -5,11 +5,11 @@ import { AvailabilityService } from '../availability.service';
 
 
 @Component({
-  selector: 'app-destingation-map',
-  templateUrl: './destingation-map.component.html',
-  styleUrls: ['./destingation-map.component.scss']
+  selector: 'app-destination-map',
+  templateUrl: './destination-map.component.html',
+  styleUrls: ['./destination-map.component.scss']
 })
-export class DestingationMapComponent implements OnInit {
+export class DestinationMapComponent implements OnInit {
 
 
   styles = LOW_CONTRAST;

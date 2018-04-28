@@ -32,7 +32,7 @@ import { AvailableDatesComponent } from './available-dates/available-dates.compo
 import { AvailabilityDetailComponent } from './availability-detail/availability-detail.component';
 import { DatesComponent } from './dates/dates.component';
 import { DateRangeComponent } from './date-range/date-range.component';
-import { DestingationMapComponent } from './destingation-map/destingation-map.component';
+import { DestinationMapComponent } from './destination-map/destination-map.component';
 import { DestinationTableComponent } from './destination-table/destination-table.component';
 import { FiltersComponent } from './filters/filters.component';
 import { LocationService } from './location-service';
@@ -49,7 +49,7 @@ import { WindowSizeService } from './window-size.service';
     DateRangeComponent,
     DestinationTableComponent,
     AvailabilityDetailComponent,
-    DestingationMapComponent,
+    DestinationMapComponent,
     DatesComponent,
     TouchSelectComponent,
   ],

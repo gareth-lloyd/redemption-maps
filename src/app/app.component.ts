@@ -30,9 +30,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   canGoOptions(): boolean {
-    return !!this.availabilityService.search.inboundStart;
+    return !!this.availabilityService.search.outboundStart;
   }
-  
+
   canGoDetail(): boolean {
     return !!this.availabilityService.selectedRoute;
   }

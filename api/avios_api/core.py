@@ -3,10 +3,10 @@ import random
 import requests
 from requests.auth import HTTPBasicAuth
 
-URL = "https://api.baplc.com/sc2/baflt-bafad/v1/"
+URL = "https://api4.baplc.com/sc4/baflt-bafad/rs/v1/"
 
 HDR_APPLICATION_NAME = ("ba_client_applicationName", "BAFlights")
-HDR_APPLICATION_VSN = ("ba_client_applicationVersion", "4.13")
+HDR_APPLICATION_VSN = ("ba_client_applicationVersion", "4.29")
 HDR_DEVICE = ("ba_client_deviceModel", "xiaome 1")
 HDR_DEVICE_TYPE = ("ba_client_deviceType", "Android")
 
@@ -41,6 +41,8 @@ def get(path, params):
         path, headers=headers,
         auth=HTTPBasicAuth(PUBLIC_USERNAME, PUBLIC_PASSWORD)
     )
+    print(response)
+    print(response.content)
     return response.json()
 
 

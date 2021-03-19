@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 URL = "https://api4.baplc.com/sc4/baflt-bafad/rs/v1/"
 
 HDR_APPLICATION_NAME = ("ba_client_applicationName", "BAFlights")
-HDR_APPLICATION_VSN = ("ba_client_applicationVersion", "4.29")
+HDR_APPLICATION_VSN = ("ba_client_applicationVersion", "4.52")
 HDR_DEVICE = ("ba_client_deviceModel", "xiaome 1")
 HDR_DEVICE_TYPE = ("ba_client_deviceType", "Android")
 

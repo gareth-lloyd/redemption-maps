@@ -1,0 +1,40 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+certifi = "==2018.1.18"
+chardet = "==3.0.4"
+decorator = "==4.1.2"
+dj-database-url = "==0.4.2"
+django-braces = "==1.11.0"
+django-cors-headers = "==2.1.0"
+django-extensions = "==1.9.7"
+django-filter = "==1.1.0"
+djangorestframework = "==3.7.7"
+djangorestframework-gis = "==0.12"
+djangorestframework-serializer-extensions = "==0.5.3"
+geopy = "*"
+gunicorn = "==19.7.1"
+hashids = "==1.2.0"
+idna = "==2.6"
+jedi = "==0.11.0"
+parso = "==0.1.0"
+pexpect = "==4.3.0"
+pickleshare = "==0.7.4"
+pytz = "==2017.3"
+requests = "==2.18.4"
+simplegeneric = "==0.8.1"
+six = "==1.11.0"
+typing = "==3.6.2"
+urllib3 = "==1.22"
+whitenoise = "==3.3.1"
+ipython = "*"
+Django = "==2.0.1"
+psycopg2 = "*"
+
+[requires]
+python_version = "3.8"

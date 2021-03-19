@@ -1,0 +1,3020 @@
+{
+    "location": [
+        {
+            "code": "AVASA",
+            "name": "ASIA",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "CN",
+                    "name": "China",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BJS",
+                            "name": "Beijing",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PKX",
+                                    "name": "Beijing Daxing Intl",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SHA",
+                            "name": "Shanghai",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PVG",
+                                    "name": "Shanghai Pudong",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "HK",
+                    "name": "Hong Kong - SAR of China",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "HKG",
+                            "name": "Hong Kong",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "HKG",
+                                    "name": "Hong Kong",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "IN",
+                    "name": "India",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BLR",
+                            "name": "Bengaluru",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BLR",
+                                    "name": "Bangalore",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BOM",
+                            "name": "Mumbai",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BOM",
+                                    "name": "Chhatrapati Shivaji Intl",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "DEL",
+                            "name": "New Delhi",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DEL",
+                                    "name": "Indira Gandhi Intl",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HYD",
+                            "name": "Hyderabad",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "HYD",
+                                    "name": "Rajiv Gandhi Intl",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MAA",
+                            "name": "Chennai",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MAA",
+                                    "name": "Chennai",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "JP",
+                    "name": "Japan",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "TYO",
+                            "name": "Tokyo",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "HND",
+                                    "name": "Haneda",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "MV",
+                    "name": "Maldives",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "MLE",
+                            "name": "Male",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MLE",
+                                    "name": "Male International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "PK",
+                    "name": "Pakistan",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ISB",
+                            "name": "Islamabad",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ISB",
+                                    "name": "Islamabad",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LHE",
+                            "name": "Lahore",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LHE",
+                                    "name": "Lahore",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "SG",
+                    "name": "Singapore",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SIN",
+                            "name": "Singapore",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SIN",
+                                    "name": "Changi",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "TH",
+                    "name": "Thailand",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BKK",
+                            "name": "Bangkok",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BKK",
+                                    "name": "Bangkok",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVAUO",
+            "name": "AUSTRALIA AND OCEANIA",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "AU",
+                    "name": "Australia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SYD",
+                            "name": "Sydney",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SYD",
+                                    "name": "Sydney Kingsford Smith",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVCAR",
+            "name": "CARIBBEAN",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "AG",
+                    "name": "Antigua",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ANU",
+                            "name": "Antigua",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ANU",
+                                    "name": "Antigua",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BB",
+                    "name": "Barbados",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BGI",
+                            "name": "Bridgetown",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BGI",
+                                    "name": "Bridgetown",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BS",
+                    "name": "Bahamas",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "NAS",
+                            "name": "Nassau",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "NAS",
+                                    "name": "Nassau",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "DO",
+                    "name": "Dominican Rep",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "PUJ",
+                            "name": "Punta Cana",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PUJ",
+                                    "name": "Punta Cana",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "GD",
+                    "name": "Grenada",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "GND",
+                            "name": "Grenada",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GND",
+                                    "name": "Grenada",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "JM",
+                    "name": "Jamaica",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "KIN",
+                            "name": "Kingston",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "KIN",
+                                    "name": "Kingston",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MBJ",
+                            "name": "Montego Bay",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MBJ",
+                                    "name": "Montego Bay",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "KN",
+                    "name": "St Kitts and Nevis",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SKB",
+                            "name": "St Kitts",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SKB",
+                                    "name": "Robert L Bradshaw International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "KY",
+                    "name": "Cayman Islands",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "GCM",
+                            "name": "Grand Cayman",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GCM",
+                                    "name": "Grand Cayman",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "LC",
+                    "name": "St Lucia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SLU",
+                            "name": "St Lucia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "UVF",
+                                    "name": "St Lucia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "TC",
+                    "name": "Turks Caicos",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "PLS",
+                            "name": "Providenciales",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PLS",
+                                    "name": "Providenciales",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "TT",
+                    "name": "Trinidad and Tobago",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "POS",
+                            "name": "Port of Spain",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "POS",
+                                    "name": "Port of Spain",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "TAB",
+                            "name": "Tobago",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TAB",
+                                    "name": "Tobago",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVCSA",
+            "name": "CENTRAL AND SOUTH AMERICA",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "AR",
+                    "name": "Argentina",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BUE",
+                            "name": "Buenos Aires",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "EZE",
+                                    "name": "Buenos Aires",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BM",
+                    "name": "Bermuda",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BDA",
+                            "name": "Bermuda",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BDA",
+                                    "name": "Bermuda",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BR",
+                    "name": "Brazil",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "RIO",
+                            "name": "Rio de Janeiro",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GIG",
+                                    "name": "Rio de Janeiro Intl",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SAO",
+                            "name": "Sao Paulo",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GRU",
+                                    "name": "Guarulhos Intl",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "CL",
+                    "name": "Chile",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SCL",
+                            "name": "Santiago",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SCL",
+                                    "name": "Santiago",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "CR",
+                    "name": "Costa Rica",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SJO",
+                            "name": "San Jose (Costa Rica)",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SJO",
+                                    "name": "San Jose",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "MX",
+                    "name": "Mexico",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "CUN",
+                            "name": "Cancun",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CUN",
+                                    "name": "Cancun International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MEX",
+                            "name": "Mexico City",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MEX",
+                                    "name": "Mexico",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVCSF",
+            "name": "CENTRAL AND SOUTH AFRICA",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "GH",
+                    "name": "Ghana",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ACC",
+                            "name": "Accra",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ACC",
+                                    "name": "Accra",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "KE",
+                    "name": "Kenya",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "NBO",
+                            "name": "Nairobi",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "NBO",
+                                    "name": "Nairobi",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "MU",
+                    "name": "Mauritius",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "MRU",
+                            "name": "Mauritius",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MRU",
+                                    "name": "Mauritius",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "NG",
+                    "name": "Nigeria",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ABV",
+                            "name": "Abuja",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ABV",
+                                    "name": "Abuja",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LOS",
+                            "name": "Lagos",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LOS",
+                                    "name": "Lagos",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "ZA",
+                    "name": "South Africa",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "CPT",
+                            "name": "Cape Town",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CPT",
+                                    "name": "Cape Town",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "JNB",
+                            "name": "Johannesburg",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "JNB",
+                                    "name": "Johannesburg",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVEUR",
+            "name": "EUROPE",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "AL",
+                    "name": "Albania",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "TIA",
+                            "name": "Tirana",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TIA",
+                                    "name": "Tirana",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "AT",
+                    "name": "Austria",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "INN",
+                            "name": "Innsbruck",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "INN",
+                                    "name": "Kranebitten",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SZG",
+                            "name": "Salzburg",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SZG",
+                                    "name": "Salzburg",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "VIE",
+                            "name": "Vienna",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "VIE",
+                                    "name": "Vienna",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BE",
+                    "name": "Belgium",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BRU",
+                            "name": "Brussels",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BRU",
+                                    "name": "Brussels",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BG",
+                    "name": "Bulgaria",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "SOF",
+                            "name": "Sofia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SOF",
+                                    "name": "Sofia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "CH",
+                    "name": "Switzerland",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BSL",
+                            "name": "Basel",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BSL",
+                                    "name": "Basel",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "GVA",
+                            "name": "Geneva",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GVA",
+                                    "name": "Geneva",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "ZRH",
+                            "name": "Zurich",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ZRH",
+                                    "name": "Zurich",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "CY",
+                    "name": "Cyprus",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "LCA",
+                            "name": "Larnaca",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LCA",
+                                    "name": "Larnaca",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PFO",
+                            "name": "Paphos",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PFO",
+                                    "name": "Paphos",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "CZ",
+                    "name": "Czech Republic",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "PRG",
+                            "name": "Prague",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PRG",
+                                    "name": "Prague",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "DE",
+                    "name": "Germany",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BER",
+                            "name": "Berlin",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BER",
+                                    "name": "Brandenburg",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CGN",
+                            "name": "Cologne/Bonn",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CGN",
+                                    "name": "Cologne/Bonn",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "DUS",
+                            "name": "Dusseldorf",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DUS",
+                                    "name": "Dusseldorf",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "FRA",
+                            "name": "Frankfurt",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "FRA",
+                                    "name": "Frankfurt",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HAJ",
+                            "name": "Hannover",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "HAJ",
+                                    "name": "Hannover",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HAM",
+                            "name": "Hamburg",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "HAM",
+                                    "name": "Hamburg",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MUC",
+                            "name": "Munich",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MUC",
+                                    "name": "Munich",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "STR",
+                            "name": "Stuttgart",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "STR",
+                                    "name": "Stuttgart",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "DK",
+                    "name": "Denmark",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BLL",
+                            "name": "Billund",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BLL",
+                                    "name": "Billund",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CPH",
+                            "name": "Copenhagen",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CPH",
+                                    "name": "Copenhagen",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "ES",
+                    "name": "Spain",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ACE",
+                            "name": "Lanzarote",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ACE",
+                                    "name": "Arrecife",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "AGP",
+                            "name": "Malaga",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "AGP",
+                                    "name": "Malaga",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "ALC",
+                            "name": "Alicante",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ALC",
+                                    "name": "Alicante",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BCN",
+                            "name": "Barcelona",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BCN",
+                                    "name": "Barcelona",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BIO",
+                            "name": "Bilbao",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BIO",
+                                    "name": "Bilbao",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "EAS",
+                            "name": "San Sebastian",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "EAS",
+                                    "name": "San Sebastian",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "IBZ",
+                            "name": "Ibiza",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "IBZ",
+                                    "name": "Ibiza",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LPA",
+                            "name": "Gran Canaria",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LPA",
+                                    "name": "Gran Canaria",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MAD",
+                            "name": "Madrid",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MAD",
+                                    "name": "Madrid",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MAH",
+                            "name": "Menorca",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MAH",
+                                    "name": "Menorca",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PMI",
+                            "name": "Palma",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PMI",
+                                    "name": "Palma",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SVQ",
+                            "name": "Seville",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SVQ",
+                                    "name": "Seville",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "TCI",
+                            "name": "Tenerife",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TFS",
+                                    "name": "Sur Reina Sofia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "VLC",
+                            "name": "Valencia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "VLC",
+                                    "name": "Valencia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "FR",
+                    "name": "France",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BIA",
+                            "name": "Corsica",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BIA",
+                                    "name": "Bastia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BOD",
+                            "name": "Bordeaux",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BOD",
+                                    "name": "Bordeaux",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CMF",
+                            "name": "Chambery",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CMF",
+                                    "name": "Chambery",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "EGC",
+                            "name": "Bergerac",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "EGC",
+                                    "name": "Bergerac",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "FSC",
+                            "name": "Corsica",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "FSC",
+                                    "name": "Figari",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "GNB",
+                            "name": "Grenoble",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GNB",
+                                    "name": "Grenoble",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LIG",
+                            "name": "Limoges",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LIG",
+                                    "name": "Limoges",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LYS",
+                            "name": "Grenoble",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GNB",
+                                    "name": "Grenoble",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "LYS",
+                                    "name": "Saint Exupery",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MRS",
+                            "name": "Marseille Provence",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MRS",
+                                    "name": "Marseille",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "NCE",
+                            "name": "Nice",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "NCE",
+                                    "name": "Nice",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PAR",
+                            "name": "Paris",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CDG",
+                                    "name": "Charles de Gaulle",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "TLS",
+                            "name": "Toulouse",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TLS",
+                                    "name": "Toulouse",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "UIP",
+                            "name": "Quimper (Brittany)",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "UIP",
+                                    "name": "Cornouaille",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "GB",
+                    "name": "United Kingdom",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ABZ",
+                            "name": "Aberdeen",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ABZ",
+                                    "name": "Aberdeen",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BFS",
+                            "name": "Belfast",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BHD",
+                                    "name": "Belfast City Airport",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "EDI",
+                            "name": "Edinburgh",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "EDI",
+                                    "name": "Edinburgh",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "GLA",
+                            "name": "Glasgow",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GLA",
+                                    "name": "Glasgow",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "INV",
+                            "name": "Inverness",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "INV",
+                                    "name": "Inverness",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "JER",
+                            "name": "Jersey",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "JER",
+                                    "name": "Jersey",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LON",
+                            "name": "London",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LCY",
+                                    "name": "City Airport",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "LGW",
+                                    "name": "Gatwick",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "LHR",
+                                    "name": "Heathrow",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "STN",
+                                    "name": "Stansted",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MAN",
+                            "name": "Manchester",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MAN",
+                                    "name": "Manchester",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "NCL",
+                            "name": "Newcastle",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "NCL",
+                                    "name": "Newcastle International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "NQY",
+                            "name": "Newquay",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "NQY",
+                                    "name": "Newquay Cornwall Airport",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SOU",
+                            "name": "Southampton",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SOU",
+                                    "name": "Southampton Airport",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "GI",
+                    "name": "Gibraltar (UK)",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "GIB",
+                            "name": "Gibraltar",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GIB",
+                                    "name": "Gibraltar",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "GR",
+                    "name": "Greece",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ATH",
+                            "name": "Athens",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ATH",
+                                    "name": "Athens",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CFU",
+                            "name": "Corfu (Kerkyra)",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CFU",
+                                    "name": "Ioannis Kapodistrias",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CHQ",
+                            "name": "Crete",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CHQ",
+                                    "name": "Chania",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "EFL",
+                            "name": "Kefalonia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "EFL",
+                                    "name": "Kefalonia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HER",
+                            "name": "Crete",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "HER",
+                                    "name": "Heraklion",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "JMK",
+                            "name": "Mykonos",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "JMK",
+                                    "name": "Mykonos",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "JSI",
+                            "name": "Skiathos",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "JSI",
+                                    "name": "Skiathos",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "JTR",
+                            "name": "Santorini (Thira)",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "JTR",
+                                    "name": "Santorini",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "KGS",
+                            "name": "Kos",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "KGS",
+                                    "name": "Kos",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "KLX",
+                            "name": "Kalamata",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "KLX",
+                                    "name": "Kalamata",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PVK",
+                            "name": "Preveza Lefkada",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PVK",
+                                    "name": "Aktion",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "RHO",
+                            "name": "Rhodes",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "RHO",
+                                    "name": "Rhodes",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SKG",
+                            "name": "Thessaloniki",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SKG",
+                                    "name": "Thessaloniki",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "ZTH",
+                            "name": "Zakynthos Island",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ZTH",
+                                    "name": "Zakynthos Island",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "HR",
+                    "name": "Croatia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "DBV",
+                            "name": "Dubrovnik",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DBV",
+                                    "name": "Dubrovnik",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PUY",
+                            "name": "Pula",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PUY",
+                                    "name": "Pula",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SPU",
+                            "name": "Split",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SPU",
+                                    "name": "Split",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "ZAG",
+                            "name": "Zagreb",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ZAG",
+                                    "name": "Zagreb",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "HU",
+                    "name": "Hungary",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BUD",
+                            "name": "Budapest",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BUD",
+                                    "name": "Budapest",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "IE",
+                    "name": "Ireland",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "DUB",
+                            "name": "Dublin",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DUB",
+                                    "name": "Dublin",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "IL",
+                    "name": "Israel",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "TLV",
+                            "name": "Tel Aviv",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TLV",
+                                    "name": "Tel Aviv",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "IS",
+                    "name": "Iceland",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "REK",
+                            "name": "Reykjavik",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "KEF",
+                                    "name": "Keflavik",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "IT",
+                    "name": "Italy",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BDS",
+                            "name": "Brindisi",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BDS",
+                                    "name": "Brindisi",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BLQ",
+                            "name": "Bologna",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BLQ",
+                                    "name": "Bologna",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BRI",
+                            "name": "Bari",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BRI",
+                                    "name": "Bari",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CAG",
+                            "name": "Sardinia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CAG",
+                                    "name": "Cagliari",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CTA",
+                            "name": "Sicily",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CTA",
+                                    "name": "Catania",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "FLR",
+                            "name": "Florence",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "FLR",
+                                    "name": "Peretola",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "GOA",
+                            "name": "Genoa",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GOA",
+                                    "name": "Cristoforo Colombo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MIL",
+                            "name": "Milan",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LIN",
+                                    "name": "Linate",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "MXP",
+                                    "name": "Malpensa",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "NAP",
+                            "name": "Naples",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "NAP",
+                                    "name": "Naples",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "OLB",
+                            "name": "Sardinia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "OLB",
+                                    "name": "Olbia",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PEG",
+                            "name": "Perugia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PEG",
+                                    "name": "ST. Francis Of Assisi",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PMO",
+                            "name": "Sicily",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PMO",
+                                    "name": "Palermo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PSA",
+                            "name": "Pisa",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PSA",
+                                    "name": "Pisa",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "ROM",
+                            "name": "Rome",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "FCO",
+                                    "name": "Fiumicino",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "TRN",
+                            "name": "Turin",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TRN",
+                                    "name": "Turin",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "VCE",
+                            "name": "Venice",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "VCE",
+                                    "name": "Marco Polo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "VRN",
+                            "name": "Verona",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "VRN",
+                                    "name": "Valerio Catullo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "LU",
+                    "name": "Luxembourg",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "LUX",
+                            "name": "Luxembourg",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LUX",
+                                    "name": "Luxembourg",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "MT",
+                    "name": "Malta",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "MLA",
+                            "name": "Malta",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MLA",
+                                    "name": "Luqa International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "NL",
+                    "name": "Netherlands",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "AMS",
+                            "name": "Amsterdam",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "AMS",
+                                    "name": "Amsterdam",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "RTM",
+                            "name": "Rotterdam",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "RTM",
+                                    "name": "Rotterdam",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "NO",
+                    "name": "Norway",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "OSL",
+                            "name": "Oslo",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "OSL",
+                                    "name": "Oslo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "PL",
+                    "name": "Poland",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "KRK",
+                            "name": "Krakow",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "KRK",
+                                    "name": "Krakow",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "WAW",
+                            "name": "Warsaw",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "WAW",
+                                    "name": "Warsaw",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "PT",
+                    "name": "Portugal",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "FAO",
+                            "name": "Faro",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "FAO",
+                                    "name": "Faro",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "FNC",
+                            "name": "Funchal",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "FNC",
+                                    "name": "Madeira",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LIS",
+                            "name": "Lisbon",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LIS",
+                                    "name": "Lisbon",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "OPO",
+                            "name": "Porto",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "OPO",
+                                    "name": "Porto",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "RO",
+                    "name": "Romania",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BUH",
+                            "name": "Bucharest",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "OTP",
+                                    "name": "Bucharest",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "RS",
+                    "name": "Serbia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "PRN",
+                            "name": "Pristina",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PRN",
+                                    "name": "Pristina",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "RU",
+                    "name": "Russia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "MOW",
+                            "name": "Moscow",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DME",
+                                    "name": "Domodedovo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "SE",
+                    "name": "Sweden",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "GOT",
+                            "name": "Gothenburg",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "GOT",
+                                    "name": "Gothenburg",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "STO",
+                            "name": "Stockholm",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ARN",
+                                    "name": "Arlanda",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "SI",
+                    "name": "Slovenia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "LJU",
+                            "name": "Ljubljana",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LJU",
+                                    "name": "Joze Pucnik",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "TR",
+                    "name": "Turkey",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "AYT",
+                            "name": "Antalya",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "AYT",
+                                    "name": "Antalya",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BXN",
+                            "name": "Bodrum",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BJV",
+                                    "name": "Milas",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "DLM",
+                            "name": "Dalaman",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DLM",
+                                    "name": "Dalaman",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "IST",
+                            "name": "Istanbul",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "IST",
+                                    "name": "Istanbul Airport",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVMEA",
+            "name": "MIDDLE EAST",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "AE",
+                    "name": "United Arab Emirates",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "DXB",
+                            "name": "Dubai",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DXB",
+                                    "name": "Dubai",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "BH",
+                    "name": "Bahrain",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "BAH",
+                            "name": "Bahrain",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BAH",
+                                    "name": "Bahrain",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "JO",
+                    "name": "Jordan",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "AMM",
+                            "name": "Amman",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "AMM",
+                                    "name": "Amman",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "KW",
+                    "name": "Kuwait",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "KWI",
+                            "name": "Kuwait",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "KWI",
+                                    "name": "Kuwait",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "QA",
+                    "name": "Qatar",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "DOH",
+                            "name": "Doha",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DOH",
+                                    "name": "Doha",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "SA",
+                    "name": "Saudi Arabia",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "JED",
+                            "name": "Jeddah",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "JED",
+                                    "name": "King Abdul Aziz International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "RUH",
+                            "name": "Riyadh",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "RUH",
+                                    "name": "King Khalid International",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVNAF",
+            "name": "NORTH AFRICA",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "DZ",
+                    "name": "Algeria",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ALG",
+                            "name": "Algiers",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ALG",
+                                    "name": "Algiers",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "EG",
+                    "name": "Egypt",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "CAI",
+                            "name": "Cairo",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "CAI",
+                                    "name": "Cairo",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "MA",
+                    "name": "Morocco",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "RAK",
+                            "name": "Marrakech",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "RAK",
+                                    "name": "Marrakech",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "AVNAM",
+            "name": "NORTH AMERICA",
+            "type": "REGION",
+            "location": [
+                {
+                    "code": "CA",
+                    "name": "Canada",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "YMQ",
+                            "name": "Montreal",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "YUL",
+                                    "name": "Montreal",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "YTO",
+                            "name": "Toronto",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "YYZ",
+                                    "name": "Toronto",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "YVR",
+                            "name": "Vancouver",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "YVR",
+                                    "name": "Vancouver",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "code": "US",
+                    "name": "USA",
+                    "type": "COUNTRY",
+                    "location": [
+                        {
+                            "code": "ATL",
+                            "name": "Atlanta",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ATL",
+                                    "name": "Hartsfield-Jackson Int",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "AUS",
+                            "name": "Austin",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "AUS",
+                                    "name": "Austin-Bergstrom Intl (TX)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BNA",
+                            "name": "Nashville",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BNA",
+                                    "name": "Nashville International (TN)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BOS",
+                            "name": "Boston",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BOS",
+                                    "name": "Logan International (MA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "BWI",
+                            "name": "Baltimore",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BWI",
+                                    "name": "Baltimore",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "CHI",
+                            "name": "Chicago",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "ORD",
+                                    "name":"O\'Hare International (IL)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "DEN",
+                            "name": "Denver",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DEN",
+                                    "name": "Denver International (CO)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "DFW",
+                            "name": "Dallas",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "DFW",
+                                    "name": "Dallas Ft Worth (TX)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HOU",
+                            "name": "Houston",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "IAH",
+                                    "name": "George Bush Intercont (TX)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LAS",
+                            "name": "Las Vegas",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LAS",
+                                    "name": "McCarran International (NV)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "LAX",
+                            "name": "Los Angeles",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "LAX",
+                                    "name": "Los Angeles International (CA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MIA",
+                            "name": "Miami",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MIA",
+                                    "name": "Miami International (FL)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "MSY",
+                            "name": "New Orleans",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MSY",
+                                    "name": "Louis Armstrong International (LA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "NYC",
+                            "name": "New York",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "EWR",
+                                    "name": "Newark Liberty International (NJ)",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "JFK",
+                                    "name": "John F Kennedy (NY)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "ORL",
+                            "name": "Orlando",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "MCO",
+                                    "name": "Orlando International (FL)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PHL",
+                            "name": "Philadelphia",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PHL",
+                                    "name": "Philadelphia International (PA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "PHX",
+                            "name": "Phoenix",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "PHX",
+                                    "name": "Sky Harbor International (AZ)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SAN",
+                            "name": "San Diego",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SAN",
+                                    "name": "San Diego International (CA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SEA",
+                            "name": "Seattle",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SEA",
+                                    "name": "Seattle-Tacoma International (WA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SFO",
+                            "name": "San Francisco",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SFO",
+                                    "name": "San Francisco International (CA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "SJC",
+                            "name": "San Francisco (San Jose CA)",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "SJC",
+                                    "name": "San Jose International (CA)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "TPA",
+                            "name": "Tampa",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "TPA",
+                                    "name": "Tampa International (FL)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "WAS",
+                            "name": "Washington DC",
+                            "type": "CITY",
+                            "location": [
+                                {
+                                    "code": "BWI",
+                                    "name": "Baltimore (MD)",
+                                    "type": "AIRPORT"
+                                },
+                                {
+                                    "code": "IAD",
+                                    "name": "Dulles International (DC)",
+                                    "type": "AIRPORT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

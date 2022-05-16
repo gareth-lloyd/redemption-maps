@@ -33,7 +33,7 @@ typing = "==3.6.2"
 urllib3 = "==1.22"
 whitenoise = "==3.3.1"
 ipython = "*"
-Django = "==2.0.1"
+Django = "==2.2.28"
 psycopg2 = "*"
 
 [requires]
